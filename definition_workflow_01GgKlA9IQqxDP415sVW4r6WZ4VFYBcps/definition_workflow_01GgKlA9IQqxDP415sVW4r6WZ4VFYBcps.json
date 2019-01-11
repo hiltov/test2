@@ -1,0 +1,66 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01GgKlA9IQqxDP415sVW4r6WZ4VFYBcps",
+    "name": "python",
+    "title": "python",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "python",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GgKm1L0rN26tpmD74F0QmslvK5zyyzi",
+        "name": "Execute Python Script",
+        "title": "Execute Python Script",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Execute Python Script",
+          "script": "a=3\nb=True\nc=\"2019-01-11T12:51:59.024634903Z\"\nd=3.5",
+          "script_queries": [
+            {
+              "script_query": "a",
+              "script_query_name": "a",
+              "script_query_type": "integer"
+            },
+            {
+              "script_query": "b",
+              "script_query_name": "b",
+              "script_query_type": "boolean"
+            },
+            {
+              "script_query": "c",
+              "script_query_name": "c",
+              "script_query_type": "date"
+            },
+            {
+              "script_query": "d",
+              "script_query_name": "d",
+              "script_query_type": "number"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
