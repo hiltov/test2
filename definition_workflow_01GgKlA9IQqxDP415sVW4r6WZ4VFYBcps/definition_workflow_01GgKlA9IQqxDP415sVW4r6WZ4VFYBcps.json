@@ -32,7 +32,7 @@
           "action_timeout": 180,
           "continue_on_failure": false,
           "display_name": "Execute Python Script",
-          "script": "a=3\nb=True\nc=\"2019-01-11T12:51:59.024634903Z\"\nd=3.5",
+          "script": "a=3\nb=True\nc=\"2019-01-11T12:51\"\nd=3.5",
           "script_queries": [
             {
               "script_query": "a",
