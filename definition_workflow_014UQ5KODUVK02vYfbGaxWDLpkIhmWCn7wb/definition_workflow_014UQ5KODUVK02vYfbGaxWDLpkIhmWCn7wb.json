@@ -14,10 +14,9 @@
       "display_name": "AH EXTG-9659",
       "favorite": false,
       "target": {
-        "execute_on_target_group": false,
-        "execute_on_workflow_target": false,
-        "no_target": true,
-        "specify_on_workflow_start": false
+        "target_type": "ccsuite.endpoint",
+        "target_id": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW",
+        "execute_on_workflow_target": true
       }
     },
     "object_type": "definition_workflow",
@@ -36,7 +35,7 @@
           "cloud_account_description": "description  1",
           "cloud_account_name": "name 1",
           "cloud_family": "Amazon",
-          "cloud_instance": "1",
+          "cloud_instance": "4",
           "continue_on_failure": false,
           "display_name": "Add Cloud Account",
           "runtime_user": {
@@ -45,8 +44,7 @@
           },
           "secret_key": "$global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc.global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc$",
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW"
+            "use_workflow_target": true
           }
         },
         "object_type": "definition_activity"
