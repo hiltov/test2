@@ -14,10 +14,9 @@
       "display_name": "test AH export",
       "favorite": false,
       "target": {
-        "execute_on_target_group": false,
-        "execute_on_workflow_target": false,
-        "no_target": true,
-        "specify_on_workflow_start": false
+        "target_type": "terminal.endpoint",
+        "target_id": "definition_target_014UVNILGVH4341RRTndm4CxxA0YzOwglJ3",
+        "execute_on_workflow_target": true
       }
     },
     "object_type": "definition_workflow",
@@ -40,8 +39,7 @@
             "target_default": true
           },
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_014UVNILGVH4341RRTndm4CxxA0YzOwglJ3"
+            "use_workflow_target": true
           }
         },
         "object_type": "definition_activity"
