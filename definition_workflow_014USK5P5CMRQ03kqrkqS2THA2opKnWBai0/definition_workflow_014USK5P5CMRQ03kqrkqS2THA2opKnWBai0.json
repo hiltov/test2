@@ -1,0 +1,98 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_014USK5P5CMRQ03kqrkqS2THA2opKnWBai0",
+    "name": "AH EXTG-9659",
+    "title": "AH EXTG-9659",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "AH EXTG-9659",
+      "favorite": false,
+      "target": {
+        "target_type": "ccsuite.endpoint",
+        "target_id": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_014USK6694WE10oWNmRKjXP6qHG2hNh6T3h",
+        "name": "Add Cloud Account",
+        "title": "Add Cloud Account",
+        "type": "ccs.add_cloud_account",
+        "base_type": "activity",
+        "properties": {
+          "access_key": "$global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc.global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc$",
+          "action_timeout": 180,
+          "aws_account_number": "1",
+          "aws_email": "ahiltov@cisco.com",
+          "cloud_account_description": "description  1",
+          "cloud_account_name": "name 1",
+          "cloud_family": "Amazon",
+          "cloud_instance": "4",
+          "continue_on_failure": false,
+          "display_name": "Add Cloud Account",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "secret_key": "$global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc.global.variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc$",
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW": {
+      "unique_name": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW",
+      "name": "81cloud-tar",
+      "title": "81cloud-tar",
+      "type": "ccsuite.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD",
+        "disable_certificate_validation": true,
+        "display_name": "81cloud-tar",
+        "host": "35.197.67.81",
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD": {
+      "unique_name": "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD",
+      "name": "81cloud-user",
+      "title": "81cloud-user",
+      "type": "runtime_user.ccs_explicit_user",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "81cloud-user"
+      }
+    }
+  },
+  "variables": {
+    "variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc": {
+      "unique_name": "variable_1CcWJ5gm6iQc8Qqp6vfZFiYLXgc",
+      "properties": {
+        "scope": "global",
+        "name": "SS",
+        "type": "datatype.secure_string"
+      },
+      "object_type": "variable"
+    }
+  }
+}
