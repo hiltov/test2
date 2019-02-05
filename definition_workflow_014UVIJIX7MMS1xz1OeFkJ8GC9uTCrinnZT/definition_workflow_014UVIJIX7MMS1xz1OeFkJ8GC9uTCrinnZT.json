@@ -14,35 +14,34 @@
       "display_name": "test 10851",
       "favorite": false,
       "target": {
-        "target_type": "ccsuite.endpoint",
-        "target_id": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW",
-        "execute_on_workflow_target": true
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
       }
     },
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_014UVIQN7OC3A5j9VGxPYEyjsFO4Rugoaz0",
-        "name": "Create Cost Group",
-        "title": "Create Cost Group",
-        "type": "ccs.create_cost_group",
+        "unique_name": "definition_activity_014UVMCR9LG4H0oDDpQln5azaF4LDW0Msly",
+        "name": "Execute Terminal Command(s)",
+        "title": "Execute Terminal Command(s)",
+        "type": "terminal.command",
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "billing_unit_list": [
-            2
-          ],
+          "command_timeout": 60,
+          "commands": "date",
           "continue_on_failure": false,
-          "cost_group_type_id": "1",
-          "display_name": "Create Cost Group",
-          "name": "test",
+          "display_name": "Execute Terminal Command(s)",
+          "merge_commands": false,
           "runtime_user": {
             "override_target_runtime_user": false,
             "target_default": true
           },
           "target": {
-            "override_workflow_target": false,
-            "use_workflow_target": true
+            "override_workflow_target": true,
+            "target_id": "definition_target_014UVNILGVH4341RRTndm4CxxA0YzOwglJ3"
           }
         },
         "object_type": "definition_activity"
@@ -53,32 +52,32 @@
     ]
   },
   "targets": {
-    "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW": {
-      "unique_name": "definition_target_01MLQrrFoB3sF3qLyeS69Z91pk1TWnipW",
-      "name": "81cloud-tar",
-      "title": "81cloud-tar",
-      "type": "ccsuite.endpoint",
+    "definition_target_014UVNILGVH4341RRTndm4CxxA0YzOwglJ3": {
+      "unique_name": "definition_target_014UVNILGVH4341RRTndm4CxxA0YzOwglJ3",
+      "name": "AH Term",
+      "title": "AH Term",
+      "type": "terminal.endpoint",
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "default_runtime_user_id": "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD",
-        "disable_certificate_validation": true,
-        "display_name": "81cloud-tar",
-        "host": "35.197.67.81",
-        "protocol": "https"
+        "default_runtime_user_id": "definition_runtime_user_014UVNF9DDAEB0nfkRBtiuIHCrCRshJyIRh",
+        "display_name": "AH Term",
+        "host": "10.88.38.57",
+        "port": 22,
+        "protocol": "ssh"
       }
     }
   },
   "runtime_users": {
-    "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD": {
-      "unique_name": "definition_runtime_user_01MLQngEdXbxKxQeHIGsovFABUBW3UPdD",
-      "name": "81cloud-user",
-      "title": "81cloud-user",
-      "type": "runtime_user.ccs_explicit_user",
+    "definition_runtime_user_014UVNF9DDAEB0nfkRBtiuIHCrCRshJyIRh": {
+      "unique_name": "definition_runtime_user_014UVNF9DDAEB0nfkRBtiuIHCrCRshJyIRh",
+      "name": "qatest",
+      "title": "qatest",
+      "type": "runtime_user.terminal_password_credentials",
       "base_type": "runtime_user",
       "object_type": "definition_runtime_user",
       "properties": {
-        "display_name": "81cloud-user"
+        "display_name": "qatest"
       }
     }
   }
