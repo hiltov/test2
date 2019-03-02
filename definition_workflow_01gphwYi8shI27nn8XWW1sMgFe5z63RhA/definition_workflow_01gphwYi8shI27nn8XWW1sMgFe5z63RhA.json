@@ -1,0 +1,80 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gphwYi8shI27nn8XWW1sMgFe5z63RhA",
+    "name": "Retrieve All Existing Action Suppressions",
+    "title": "Retrieve All Existing Action Suppressions",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Application Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpIBEMe1qYlp0LD75rlq5wD6iUzIL4h",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Account Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpI6zrEIVbhcF3OhGWPIHIJr7qT7Srv",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "AppD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Retrieve All Existing Action Suppressions For The Given Application Id.",
+      "display_name": "Retrieve All Existing Action Suppressions",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gpK9xjB4zjyoCkjxaPPL62OfakKZsBV",
+        "name": "HTTP Request",
+        "title": " Retrieve All Existing Action Suppressions",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": " Retrieve All Existing Action Suppressions",
+          "method": "GET",
+          "relative_url": "/api/accounts/$workflow.definition_workflow_01gphwYi8shI27nn8XWW1sMgFe5z63RhA.input.variable_workflow_01gpI6zrEIVbhcF3OhGWPIHIJr7qT7Srv$/applications/$workflow.definition_workflow_01gphwYi8shI27nn8XWW1sMgFe5z63RhA.input.variable_workflow_01gpIBEMe1qYlp0LD75rlq5wD6iUzIL4h$/actionsuppressions",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}

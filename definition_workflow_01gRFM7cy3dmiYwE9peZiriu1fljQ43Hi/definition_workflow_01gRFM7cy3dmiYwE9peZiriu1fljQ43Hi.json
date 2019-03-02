@@ -1,0 +1,244 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gRFM7cy3dmiYwE9peZiriu1fljQ43Hi",
+    "name": "Get Polling Interval By Id",
+    "title": "Get Polling Interval By Id",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Version",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRGVQOuMH9UAlmYnvJGKCkA2jGhZASB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Response",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRGyqul39woCcLIl4PgGVwf7jHJrTIa",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRfTYTcreV9sY1KpIMazEN8nyWSr9XM",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "this atomic get polling interval details by Id",
+      "display_name": "Get Polling Interval By Id",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152CSJ7ELERM3k8eF4Tlmguq2AefGtAHyJ",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gRfm8Jg4I8H7menlPuBJI1yQ2MpX22a",
+        "name": "HTTP Request",
+        "title": "Polling Interval By Id",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152CSJ7ELERM3k8eF4Tlmguq2AefGtAHyJ.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Polling Interval By Id",
+          "method": "GET",
+          "relative_url": "/api/v1/network-device/$workflow.definition_workflow_01gRFM7cy3dmiYwE9peZiriu1fljQ43Hi.input.variable_workflow_01gRfTYTcreV9sY1KpIMazEN8nyWSr9XM$/collection-schedule",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg",
+        "name": "JSONPath Query",
+        "title": "Read Polling Interval By Id",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Polling Interval By Id",
+          "input_json": "$activity.definition_activity_01gRfm8Jg4I8H7menlPuBJI1yQ2MpX22a.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.response ",
+              "jsonpath_query_name": "Response",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.version ",
+              "jsonpath_query_name": "Version",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gRg8On8nVD3ldmxVvmgMPEawSzBrx3Q",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gRg8ROJJW4Z8v1nK8F0w6wH7T8tr6SB",
+            "name": "Condition Branch",
+            "title": " Polling Interval  Id Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg.output.jsonpath_queries.Response$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": " Polling Interval  Id Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gRFzd5GvguqcTowyiYDxVDqco7tyeA5",
+                "name": "Set Variables",
+                "title": "Set Polling Interval Values",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Polling Interval Values",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gRFM7cy3dmiYwE9peZiriu1fljQ43Hi.output.variable_workflow_01gRGyqul39woCcLIl4PgGVwf7jHJrTIa$",
+                      "variable_value_new": "$activity.definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg.output.jsonpath_queries.Response$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gRFM7cy3dmiYwE9peZiriu1fljQ43Hi.output.variable_workflow_01gRGVQOuMH9UAlmYnvJGKCkA2jGhZASB$",
+                      "variable_value_new": "$activity.definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg.output.jsonpath_queries.Version$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gRg8SVCoJNRLDyxWqw8y2flfA9P6c1d",
+            "name": "Condition Branch",
+            "title": " Polling Interval Id Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg.output.jsonpath_queries.Response$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": " Polling Interval Id Not Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gRg9hObvXUOvkB6umLghZ2PlWfPFKNK",
+                "name": "Failed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "Failed  \nError :$activity.definition_activity_01gRFZ6HToEDW75r1vnALrH62Y0ZcQvxg.output.jsonpath_queries.Response$"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gpP4z8mvkN0glXtdjoGj6fO6Z6pVmHG",
+    "name": "Delete a Specific Action Suppression by ID",
+    "title": "Delete a Specific Action Suppression by ID",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "ActionSuppressionId",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpPUpynOHVLEfjO3FYGQEp78PQBuDQA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "ApplicationId",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpPF691THnAG6cPlNG5pz8oT2fNGSTJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "AccountId",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpPd9xsR75ZLXnKiGAdArQnwFk6uI3R",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "AppD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Delete a Specific Action Suppression by ID.",
+      "display_name": "Delete a Specific Action Suppression by ID",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gpPMQ63buxTLWpegIQv3QPKD2hWp790",
+        "name": "HTTP Request",
+        "title": "Delete Action Suppression",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Delete Action Suppression",
+          "method": "DELETE",
+          "relative_url": " /api/accounts/$workflow.definition_workflow_01gpP4z8mvkN0glXtdjoGj6fO6Z6pVmHG.input.variable_workflow_01gpPd9xsR75ZLXnKiGAdArQnwFk6uI3R$/applications/$workflow.definition_workflow_01gpP4z8mvkN0glXtdjoGj6fO6Z6pVmHG.input.variable_workflow_01gpPF691THnAG6cPlNG5pz8oT2fNGSTJ$/actionsuppressions/$workflow.definition_workflow_01gpP4z8mvkN0glXtdjoGj6fO6Z6pVmHG.input.variable_workflow_01gpPUpynOHVLEfjO3FYGQEp78PQBuDQA$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc",
+    "name": "Get Interface Info",
+    "title": "Get Interface Info",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Device Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYFo5SC1HEqXYQKxWAE7DMXzCwjagB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface IP Address",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYPTWK8q3VMjFQQ6edzZJIpS4Wvmbl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Port Type",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR5BZXPWU6XjINHoZsTql02ClqEp6a6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "Ip Address",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqXkynrcHNwfT9AUlViCKiCV1iIB2v8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Description",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYDNOR1n96AjNCmEnqSuAVmR0QwmMu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "Interface Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqXjg0NsqiymahSGJ8XsMobCEDFXmCP",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Admin Status",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYa06hmvAAyH8eFdmsuKkL4CIFeKN2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Tenant ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYkDog1GL3Jfff4MdKPJELpKq9kPG0",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Type",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYO0ghSnrxr3FFBAHWb2ya0mMJAN9x",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface UID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqZwx1Osb4CJ2Kmm7DoN2mO7BdsRlHS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface VLAN Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYTV3vRQCncOA0nWNGSuWko4IzHUjz",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "Device Id",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqXeRL4uefo84qWV4sDmeVfQpNTpw4N",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Class Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYbxY2RB6dDy7HwBWpg1jtkPrwqA1S",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Port Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYuvyG3GgIglLoUQCygYLgRsvAkg6u",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Set URL",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqXd7tlFHRq886szGaV3JCFDH6K53se",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqYIjIEjLOP65Pz9maVwT4kY2IuPT9P",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Interface Speed",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR59FFL2GfX9kVD4MRHVIPJ6yZV5eRg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "Interface Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqXIisDr2SUZbyj6sLNl3pYyBsuX13y",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "This atomic workflow fetches interface info",
+      "display_name": "Get Interface Info",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gqXmWgxvqj5IMovnWjPWoQQyhhPbtIi",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gqXmxYMY8tP7s3jgwqqMD03D1aDEqqV",
+            "name": "Condition Branch",
+            "title": "If IP Address Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXkynrcHNwfT9AUlViCKiCV1iIB2v8$",
+                "operator": "ne",
+                "right_operand": "null"
+              },
+              "continue_on_failure": false,
+              "display_name": "If IP Address Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gqXOlL2nMNUqsowwxb4STL0NiGVmmGs",
+                "name": "Set Variables",
+                "title": "Set URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set URL",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.local.variable_workflow_01gqXd7tlFHRq886szGaV3JCFDH6K53se$",
+                      "variable_value_new": "/api/v1/interface/ip-address/$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXkynrcHNwfT9AUlViCKiCV1iIB2v8$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gqXmZnvq2dt8FnxZIBerohxZKBaUUbc",
+            "name": "Condition Branch",
+            "title": "If Interface Id found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXjg0NsqiymahSGJ8XsMobCEDFXmCP$",
+                "operator": "ne",
+                "right_operand": "null"
+              },
+              "continue_on_failure": false,
+              "display_name": "If Interface Id found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gqXo0IAvcCDSP31N2ciTd042qEp2iFd",
+                "name": "Set Variables",
+                "title": "Set URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set URL",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.local.variable_workflow_01gqXd7tlFHRq886szGaV3JCFDH6K53se$",
+                      "variable_value_new": "/api/v1/interface/$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXjg0NsqiymahSGJ8XsMobCEDFXmCP$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gqXnfnXNzEFo0XgqYoE5d0xPATemyPc",
+            "name": "Condition Branch",
+            "title": "If Device Id and interface Name Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXIisDr2SUZbyj6sLNl3pYyBsuX13y$",
+                  "operator": "ne",
+                  "right_operand": "null"
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXeRL4uefo84qWV4sDmeVfQpNTpw4N$",
+                  "operator": "ne",
+                  "right_operand": "null"
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "If Device Id and interface Name Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gqXoLrj6hAElRicmW3CX1rk1SEeQmvv",
+                "name": "Set Variables",
+                "title": "Set URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set URL",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.local.variable_workflow_01gqXd7tlFHRq886szGaV3JCFDH6K53se$",
+                      "variable_value_new": "/api/v1/interface/network-device/$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXeRL4uefo84qWV4sDmeVfQpNTpw4N$/interface-name?name=$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.input.variable_workflow_01gqXIisDr2SUZbyj6sLNl3pYyBsuX13y$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_0152D1RSJ8CVQ5SmlQCE0eDIZxpZtw41qfS",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqxvfOguHTMgo29xdKSzRieTpWG8Vaw",
+        "name": "HTTP Request",
+        "title": "Get Interface Info",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152D1RSJ8CVQ5SmlQCE0eDIZxpZtw41qfS.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Get Interface Info",
+          "method": "GET",
+          "relative_url": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.local.variable_workflow_01gqXd7tlFHRq886szGaV3JCFDH6K53se$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg",
+        "name": "JSONPath Query",
+        "title": "Read Interface Details",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Interface Details",
+          "input_json": "$activity.definition_activity_01gqxvfOguHTMgo29xdKSzRieTpWG8Vaw.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.response..adminStatus",
+              "jsonpath_query_name": "Admin Status",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..className",
+              "jsonpath_query_name": "Class Name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..description",
+              "jsonpath_query_name": "Description",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..deviceId",
+              "jsonpath_query_name": "DeviceId",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..id",
+              "jsonpath_query_name": "InterfaceId",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..instanceTenantId",
+              "jsonpath_query_name": "TenantId",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..instanceUuid",
+              "jsonpath_query_name": "Interface UId",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..interfaceType",
+              "jsonpath_query_name": "Interface Type",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..ipv4Address",
+              "jsonpath_query_name": "Interface IP",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..portName",
+              "jsonpath_query_name": "Interface Name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..vlanId",
+              "jsonpath_query_name": "VLAN Id",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..speed",
+              "jsonpath_query_name": "Speed",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.response..portType",
+              "jsonpath_query_name": "Port Type",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqylwEzTUgZmTbO8IykRMNKGLaXjcz9",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gqyM1o8gfZX9XfzSbMN10x7XdKVGDrg",
+            "name": "Condition Branch",
+            "title": "If Id Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.InterfaceId$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Id Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gqyTnYwTAMolsZbxft3csYJyFW0jtUH",
+                "name": "Set Variables",
+                "title": "Set Interface Values",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Interface Values",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYa06hmvAAyH8eFdmsuKkL4CIFeKN2$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Admin Status$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYbxY2RB6dDy7HwBWpg1jtkPrwqA1S$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Class Name$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYDNOR1n96AjNCmEnqSuAVmR0QwmMu$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Description$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYFo5SC1HEqXYQKxWAE7DMXzCwjagB$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.DeviceId$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYIjIEjLOP65Pz9maVwT4kY2IuPT9P$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.InterfaceId$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYPTWK8q3VMjFQQ6edzZJIpS4Wvmbl$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Interface IP$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYuvyG3GgIglLoUQCygYLgRsvAkg6u$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Interface Name$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYkDog1GL3Jfff4MdKPJELpKq9kPG0$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.TenantId$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqYO0ghSnrxr3FFBAHWb2ya0mMJAN9x$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Interface Type$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gqZwx1Osb4CJ2Kmm7DoN2mO7BdsRlHS$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Interface UId$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gR59FFL2GfX9kVD4MRHVIPJ6yZV5eRg$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Speed$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gqX8mk2PNqSIMFIXCMxXoxysUoqkHyc.output.variable_workflow_01gR5BZXPWU6XjINHoZsTql02ClqEp6a6$",
+                      "variable_value_new": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.Port Type$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gqyM6U3gnepySLGiebTKr7DYDKtPkpo",
+            "name": "Condition Branch",
+            "title": "If Id Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gqxZiVf4wBQHzPh8aNyritFc4t5L2vg.output.jsonpath_queries.InterfaceId$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Id Not Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gqypvHzJAjXON2vwh24Egi0L6gEP4db",
+                "name": "Failed",
+                "title": "Succeeded",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "Failed to get the interface id"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gqY6TWdjK4B2SYeQyXkLof2jcKG9Lps",
+    "name": "Get Polling interval for all devices",
+    "title": "Get Polling interval for all devices",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Polling Interval",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gqydI5sTa1pOILuByGL1KqAeW757L7l",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "this atomic get polling interval details for all devices",
+      "display_name": "Get Polling interval for all devices",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152CTAEFFSDA7BZbPVhHh4HVTdGz9Wu5cf",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqYF9zHStzESiRpWzaUE4dlILVZZyXt",
+        "name": "HTTP Request",
+        "title": "Get Polling interval",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152CTAEFFSDA7BZbPVhHh4HVTdGz9Wu5cf.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Get Polling interval",
+          "method": "GET",
+          "relative_url": "/api/v1/network-device/collection-schedule/global",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqYfbUnjxIgBg1ApfpwZxn54cNlHFeq",
+        "name": "JSONPath Query",
+        "title": "Read Polling Interval",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Polling Interval",
+          "input_json": "$activity.definition_activity_01gqYF9zHStzESiRpWzaUE4dlILVZZyXt.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.response",
+              "jsonpath_query_name": "Response",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gqYGEA8d2Ji6LabrlTUutYnoK3Wykrb",
+        "name": "Set Variables",
+        "title": "Set Polling Interval",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Polling Interval",
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01gqY6TWdjK4B2SYeQyXkLof2jcKG9Lps.output.variable_workflow_01gqydI5sTa1pOILuByGL1KqAeW757L7l$",
+              "variable_value_new": "$activity.definition_activity_01gqYfbUnjxIgBg1ApfpwZxn54cNlHFeq.output.jsonpath_queries.Response$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

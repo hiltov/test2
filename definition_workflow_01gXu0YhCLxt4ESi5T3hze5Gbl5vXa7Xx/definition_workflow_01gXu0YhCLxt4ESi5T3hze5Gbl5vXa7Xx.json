@@ -1,0 +1,165 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx",
+    "name": "Associate EPG to Domain",
+    "title": "Associate EPG to Domain",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Provision Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx6wlyWUauPWguMOqteypIHq8mlXvB9",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "scope": "input",
+          "name": "Token",
+          "type": "datatype.secure_string"
+        },
+        "unique_name": "variable_workflow_01gXV4M9NytYMhkQlL8TT1yG4na8vvXPx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Cookie",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gXV6RAudLNMV937Z6Blg07ZUDVlU4NG",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Tenant Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx0CUaYpgZiNVUeWJPJlFQ2eSAsmMT8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Response",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx3HaPOQ0bHC2IJbYVsgLl5wAbwEljm",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "In Bound ",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx4WJsLylqiV3rWjfzV32jAPvWAgHIw",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Tenant Property",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx4pGuWByYaIeOXHmjLGaOhRk9wRMkx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Request Body",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gx5D7zl4258nJzTXE8l0O754GgBJbKj",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco ACI",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Associate EPG to Domain",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gXufSyP1dip8mgwe33d5iFLtahg4jIh",
+        "name": "Associate EPG to Domain",
+        "title": "Associate EPG to Domain",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Associate EPG to Domain",
+          "input": {
+            "variable_workflow_01gsIwExqfmUaoggu6uOyvBvabqZA3ZLV": "$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gXV6RAudLNMV937Z6Blg07ZUDVlU4NG$",
+            "variable_workflow_01gsdK0zbTS4PCnARX0O9igJm1kjJuPeO": "POST",
+            "variable_workflow_01gsdloLMNSSYplMekO1An6ixWk3Lxp6i": "$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gx5D7zl4258nJzTXE8l0O754GgBJbKj$",
+            "variable_workflow_01gsdpOPuyoXxmcr2tUmx0nYehy4zQq7V": "node/mo/uni/tn-$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gx0CUaYpgZiNVUeWJPJlFQ2eSAsmMT8$/mgmtp-$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gx4pGuWByYaIeOXHmjLGaOhRk9wRMkx$/inb-$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gx4WJsLylqiV3rWjfzV32jAPvWAgHIw$/$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gx6wlyWUauPWguMOqteypIHq8mlXvB9$.json",
+            "variable_workflow_01gsdslJCwSZyhMcI4byCrpPtpAUomyce": "$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.input.variable_workflow_01gXV4M9NytYMhkQlL8TT1yG4na8vvXPx$"
+          },
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_type": "01gQ9JO6NNJpw6sXHVGZEGRGZ2QoL5Ldk",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gx2YmQdRRSd4SSzjlwrMTclZx5CtFzm",
+        "name": "Set Variables",
+        "title": "Set Response",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Response",
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01gXu0YhCLxt4ESi5T3hze5Gbl5vXa7Xx.output.variable_workflow_01gx3HaPOQ0bHC2IJbYVsgLl5wAbwEljm$",
+              "variable_value_new": "$activity.definition_activity_01gXufSyP1dip8mgwe33d5iFLtahg4jIh.output.variable_workflow_01gsEqfeERFH1lYRlKhW81VRFgp6uC1Dp$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "atomic_workflows": [
+    "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+  ]
+}

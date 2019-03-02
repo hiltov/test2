@@ -1,0 +1,82 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gp5H40Im2mC3Iawqi2qhZW6N56moRfJ",
+    "name": "Create Custom URLS For Notifications",
+    "title": "Create Custom URLS For Notifications",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Customer Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gp5RXYiiFQKYqNR94oiEMw66GbQdMRD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Controller URL",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gp5XSTC75GsHmkzM7NJJytbV83ae3WZ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "AppD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Create Custom URLS For Notifications.",
+      "display_name": "Create Custom URLS For Notifications",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gp5jFtfkgQmwcIdzgySyi85tl7GqPbE",
+        "name": "HTTP Request",
+        "title": "Create Custom URLS For Notifications",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\r\n   \"controllerURL\": \"$workflow.definition_workflow_01gp5H40Im2mC3Iawqi2qhZW6N56moRfJ.input.variable_workflow_01gp5XSTC75GsHmkzM7NJJytbV83ae3WZ$\"\r\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Create Custom URLS For Notifications",
+          "method": "POST",
+          "relative_url": "/rest/accounts/customer_name/update-controller-url",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}

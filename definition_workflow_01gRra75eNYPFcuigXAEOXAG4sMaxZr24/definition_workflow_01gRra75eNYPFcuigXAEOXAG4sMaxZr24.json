@@ -1,0 +1,132 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gRra75eNYPFcuigXAEOXAG4sMaxZr24",
+    "name": "Update Device Role",
+    "title": "Update Device Role",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "DeviceId",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRrRo6cUDbtgjVKvPwhf8wiKyh8C1jx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Role",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRrSdLdB8rg7iayi3jOAIYpSzO8yyV4",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "RoleSource",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gRrT6ZLdpbi8zv5FYcndoRjLMBFcF7O",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "this atomic updates/replaces device role",
+      "display_name": "Update Device Role",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152D6MNSD1YK0XxdgHnURyG297IJFubHzA",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "target_type": "01gQ9JO6NNJpw6sXHVGZEGRGZ2QoL5Ldk",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gRSdohek5GlaT3JlQ1Gyq2WC1g8ecH5",
+        "name": "HTTP Request",
+        "title": "Update Device Role",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\r\n  \"id\": \"$workflow.definition_workflow_01gRra75eNYPFcuigXAEOXAG4sMaxZr24.input.variable_workflow_01gRrRo6cUDbtgjVKvPwhf8wiKyh8C1jx$\",\r\n  \"role\": \"$workflow.definition_workflow_01gRra75eNYPFcuigXAEOXAG4sMaxZr24.input.variable_workflow_01gRrSdLdB8rg7iayi3jOAIYpSzO8yyV4$\",\r\n  \"roleSource\": \"$workflow.definition_workflow_01gRra75eNYPFcuigXAEOXAG4sMaxZr24.input.variable_workflow_01gRrT6ZLdpbi8zv5FYcndoRjLMBFcF7O$\"\r\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152D6MNSD1YK0XxdgHnURyG297IJFubHzA.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Update Device Role",
+          "method": "PUT",
+          "relative_url": "/api/v1/network-device/brief",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

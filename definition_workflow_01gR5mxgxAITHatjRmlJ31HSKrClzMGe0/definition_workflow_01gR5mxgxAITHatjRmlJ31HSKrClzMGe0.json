@@ -1,0 +1,306 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0",
+    "name": "Get List Of Files",
+    "title": "Get List Of Files",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Md5Checksum",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR7lmcdOoviKLsXu8YSCSAT9Sm3xCcD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "NameSpace",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR6iH1KHToyQNgUwHb3dmLC6OrVQEUg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR7ERqiqICPHu3uzcCSn9EUQXKXWZ4n",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "FileSize",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR7JvzrG2tHvO56tjdKk51UWypepmy8",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR7ffeOs7axCiwnDxPjwCRCqppC72DQ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "FileFormat",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR7hEWIxiO1ami7R5mrWfEKEZP2U32j",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "This atomic workflow fetches list of files",
+      "display_name": "Get List Of Files",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152D51VQPS1K1na0a3ptbCCgjxjFiGUDtE",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR63aAWvsbwss1NR2sI055tsO4STbtq",
+        "name": "HTTP Request",
+        "title": "List Of Files ",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152D51VQPS1K1na0a3ptbCCgjxjFiGUDtE.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "List Of Files ",
+          "method": "GET",
+          "relative_url": "/api/v1/file/namespace/$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.input.variable_workflow_01gR6iH1KHToyQNgUwHb3dmLC6OrVQEUg$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i",
+        "name": "JSONPath Query",
+        "title": "Read List Of Files",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read List Of Files",
+          "input_json": "$activity.definition_activity_01gR63aAWvsbwss1NR2sI055tsO4STbtq.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$..id ",
+              "jsonpath_query_name": "ID",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$..name",
+              "jsonpath_query_name": "Name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$..md5Checksum ",
+              "jsonpath_query_name": "Md5Checksum",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$..fileSize ",
+              "jsonpath_query_name": "FileSize",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$..fileFormat ",
+              "jsonpath_query_name": "FileFormat",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR8DgnZ48LMEdxn5iBgNrtdBzxI6kIL",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gR8DKi88gZePf2fvSJRhm7LvTCjeqSK",
+            "name": "Condition Branch",
+            "title": "If List Of Files Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.ID$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If List Of Files Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR7bJFNqwWWHC3wi8jmu8F1DS4qYXd0",
+                "name": "Set Variables",
+                "title": "Set List Of Files",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set List Of Files",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.output.variable_workflow_01gR7ERqiqICPHu3uzcCSn9EUQXKXWZ4n$",
+                      "variable_value_new": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.ID$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.output.variable_workflow_01gR7ffeOs7axCiwnDxPjwCRCqppC72DQ$",
+                      "variable_value_new": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.Name$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.output.variable_workflow_01gR7JvzrG2tHvO56tjdKk51UWypepmy8$",
+                      "variable_value_new": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.FileSize$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.output.variable_workflow_01gR7hEWIxiO1ami7R5mrWfEKEZP2U32j$",
+                      "variable_value_new": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.FileFormat$"
+                    },
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR5mxgxAITHatjRmlJ31HSKrClzMGe0.output.variable_workflow_01gR7lmcdOoviKLsXu8YSCSAT9Sm3xCcD$",
+                      "variable_value_new": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.Md5Checksum$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gR8DlKrCaZEC9sknt2p4yYOhNOcT9us",
+            "name": "Condition Branch",
+            "title": "If List Of Files Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.ID$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If List Of Files Not Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR8jGmpNGrXWjSd1ooNKhnpWw9Krugo",
+                "name": "Failed",
+                "title": "Succeeded",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "failed \nError : $activity.definition_activity_01gR6pCkh5dfZQnhDsUAyHzcpvb9zCg6i.output.jsonpath_queries.ID$"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

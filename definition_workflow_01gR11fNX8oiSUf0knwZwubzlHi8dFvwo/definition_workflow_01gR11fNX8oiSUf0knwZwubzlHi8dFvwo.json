@@ -1,0 +1,268 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gR11fNX8oiSUf0knwZwubzlHi8dFvwo",
+    "name": "Get Device Config for all Devices",
+    "title": "Get Device Config for all Devices",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01gR3uc1jiiV6ahutm0DsNH0vpuEXnqZB",
+        "properties": {
+          "scope": "output",
+          "name": "Device Config Details",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_01gR3W275AIwHVpheKmdLGfV4PB0UjM5t",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "this atomic get the details of device config for all devices",
+      "display_name": "Get Device Config for all Devices",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152CL8GS0WXK0ORQR5s7LGtwN3jrE6zKy8",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR1DkYo7JyYhLXsLFCtZ2KiFjQPCgrZ",
+        "name": "HTTP Request",
+        "title": "Get Device Config for all Devices",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152CL8GS0WXK0ORQR5s7LGtwN3jrE6zKy8.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Get Device Config for all Devices",
+          "method": "Get",
+          "relative_url": "/api/v1/network-device/config",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR2aCHSui2SDRGIOsij0SJYkCAPuouJ",
+        "name": "Read Table from JSON",
+        "title": "Read Device Config Details",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Read Device Config Details",
+          "input_json": "$activity.definition_activity_01gR1DkYo7JyYhLXsLFCtZ2KiFjQPCgrZ.output.response_body$",
+          "jsonpath_query": "$.response",
+          "persist_output": false,
+          "populate_columns": false,
+          "table_columns": [
+            {
+              "column_name": "id",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "runningConfig",
+              "column_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR2m8gfCWvqsFc4EeaZvVTLmhyfm43r",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gR2mcxvSWQSGyBcnb3RA2DgL54FvVdS",
+            "name": "Condition Branch",
+            "title": "If Id Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR2aCHSui2SDRGIOsij0SJYkCAPuouJ.output.read_table_from_json[0].id$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Id Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR3wBIUKwL0nAC9Yj5qK93Zp4Ky1cvI",
+                "name": "For Each",
+                "title": "For Each",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "For Each",
+                  "source_array": "$activity.definition_activity_01gR2aCHSui2SDRGIOsij0SJYkCAPuouJ.output.read_table_from_json$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01gR3xEXZPW9VeDesxoZR8jd8iPB5qH8B",
+                    "name": "Add Row to Table",
+                    "title": "Add Device Config Details",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Device Config Details",
+                      "input_table": "$workflow.definition_workflow_01gR11fNX8oiSUf0knwZwubzlHi8dFvwo.output.variable_workflow_01gR3W275AIwHVpheKmdLGfV4PB0UjM5t$",
+                      "row": [
+                        {
+                          "key": "runningConfig",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01gR3wBIUKwL0nAC9Yj5qK93Zp4Ky1cvI.input.source_array[@].runningConfig$"
+                        },
+                        {
+                          "key": "deviceId",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01gR3wBIUKwL0nAC9Yj5qK93Zp4Ky1cvI.input.source_array[@].id$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gR2mfHYBMWOmm29QTrJOqL7wczpmgod",
+            "name": "Condition Branch",
+            "title": "If Id Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR2aCHSui2SDRGIOsij0SJYkCAPuouJ.output.read_table_from_json[0].id$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Id Not Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR2qqy3TcnpaifyeVfWinAMR3TPmzQe",
+                "name": "Failed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "Failed to get Device Id"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01gR3uc1jiiV6ahutm0DsNH0vpuEXnqZB": {
+      "unique_name": "tabletype_01gR3uc1jiiV6ahutm0DsNH0vpuEXnqZB",
+      "data_type": "datatype.tabletype",
+      "display_name": "Device Config",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "maxLength": 512,
+          "name": "deviceId",
+          "title": "Device Id",
+          "type": "string"
+        },
+        {
+          "maxLength": 16384,
+          "name": "runningConfig",
+          "title": "Running Config",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}

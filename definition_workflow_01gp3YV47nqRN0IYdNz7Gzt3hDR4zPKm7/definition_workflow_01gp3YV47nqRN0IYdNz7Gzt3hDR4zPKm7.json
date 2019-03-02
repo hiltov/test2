@@ -1,0 +1,528 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7",
+    "name": "Retrieve Transaction Snapshots",
+    "title": "Retrieve Transaction Snapshots",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01gpNrB2ZsN6wNqwkudkh1w0SvNAk127F",
+        "properties": {
+          "scope": "output",
+          "name": "Retrieve Transaction Snapshots Table",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_01gpNU36xO9p17oAQVDYlDSi68ez4aofO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "URL",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpR01Lj5R1tNlNnsWqJ6S4pbo9HfZDW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "EndTime",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpRH6FoUMGuZPyFYIpUP1TSI6dpGuDe",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "null",
+          "scope": "input",
+          "name": "StartTime",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpRfIBD09i0JtXJD3KrCe3SiXo2DePg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Duration in Minutes",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpqMHYo82ftE2A9GOiO8YXkyX98c5Tc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Application Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gp4G6VDJO3yu6Ob2rQvr3xUJdeLtbve",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Time Range Type",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpLjdW6XeFozzDBucK2l4CNXgWILGWL",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "AppD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Retrieve Transaction Snapshots  Based On The Application Name.",
+      "display_name": "Retrieve Transaction Snapshots",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gpqtKyHURs9kgvjLTbDBJVMmyrfqtKu",
+        "name": "Condition Block",
+        "title": "Evaluate Condition",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "conditions": [],
+          "continue_on_failure": false,
+          "display_name": "Evaluate Condition"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gpqtlAkM7oKPrO13CXawIXN58Io3lhI",
+            "name": "Condition Branch",
+            "title": "Time Range Equals BETWEEN_TIMES",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpLjdW6XeFozzDBucK2l4CNXgWILGWL$",
+                "operator": "eq",
+                "right_operand": "BETWEEN_TIMES"
+              },
+              "continue_on_failure": false,
+              "display_name": "Time Range Equals BETWEEN_TIMES"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gpqyS28CIhyBFcvTR7mw6iLywR27rWr",
+                "name": "Set Variables",
+                "title": "Set URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set URL",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.local.variable_workflow_01gpR01Lj5R1tNlNnsWqJ6S4pbo9HfZDW$",
+                      "variable_value_new": "/rest/applications/$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gp4G6VDJO3yu6Ob2rQvr3xUJdeLtbve$/request-snapshots?time-range-type=$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpLjdW6XeFozzDBucK2l4CNXgWILGWL$\u0026start-time=$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpRfIBD09i0JtXJD3KrCe3SiXo2DePg$\u0026end-time=$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpRH6FoUMGuZPyFYIpUP1TSI6dpGuDe$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gpqtlWJmZnbVQol2RknnkBEx0v6D0fb",
+            "name": "Condition Branch",
+            "title": "Time Range Not BETWEEN_TIMES",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpLjdW6XeFozzDBucK2l4CNXgWILGWL$",
+                "operator": "ne",
+                "right_operand": "BETWEEN_TIMES"
+              },
+              "continue_on_failure": false,
+              "display_name": "Time Range Not BETWEEN_TIMES"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gpqyftv1xQ3iYgLkpJ9ifdD1ltnb7GK",
+                "name": "Set Variables",
+                "title": "Set URL",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set URL",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.local.variable_workflow_01gpR01Lj5R1tNlNnsWqJ6S4pbo9HfZDW$",
+                      "variable_value_new": "/rest/applications/$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gp4G6VDJO3yu6Ob2rQvr3xUJdeLtbve$/request-snapshots?time-range-type=$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpLjdW6XeFozzDBucK2l4CNXgWILGWL$\u0026duration-in-mins=$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.input.variable_workflow_01gpqMHYo82ftE2A9GOiO8YXkyX98c5Tc$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01gp45QzqjfVCBsd7iTOTlljY2UTX94wT",
+        "name": "HTTP Request",
+        "title": "Retrieve Transaction Snapshots",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Retrieve Transaction Snapshots",
+          "method": "GET",
+          "relative_url": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.local.variable_workflow_01gpR01Lj5R1tNlNnsWqJ6S4pbo9HfZDW$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gpQfRnu08Lw556vULi6xqQzrsXO21I3",
+        "name": "Read Table from XML",
+        "title": "Read Transaction Snapshots",
+        "type": "corejava.read_table_from_xml",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Transaction Snapshots",
+          "input_xml": "$activity.definition_activity_01gp45QzqjfVCBsd7iTOTlljY2UTX94wT.output.response_body$ ",
+          "persist_output": false,
+          "populate_columns": false,
+          "table_columns": [
+            {
+              "column_name": "id",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "requestGUID",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "applicationId",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "applicationComponentId",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "applicationComponentNodeId",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "async",
+              "column_type": "boolean",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "threadID",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "threadName",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "errorOccured",
+              "column_type": "boolean",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "userExperience",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "timeTakenInMilliSecs",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "cpuTimeTakenInMilliSecs",
+              "column_type": "integer",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "summary",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "errorSummary",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "URL",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "BusinessTransactionId",
+              "column_type": "string",
+              "zdate_type_format": ""
+            }
+          ],
+          "xmlpath_query": "//request-segment-data"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE",
+        "name": "For Each",
+        "title": "For Each Workflow",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each Workflow",
+          "source_array": "$activity.definition_activity_01gpQfRnu08Lw556vULi6xqQzrsXO21I3.output.read_table_from_xml$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01gpObwJZCbrUWdDaPhtn3rPT3twOzXp2",
+            "name": "Add Row to Table",
+            "title": "Add Transaction Snapshots Details",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Transaction Snapshots Details",
+              "input_table": "$workflow.definition_workflow_01gp3YV47nqRN0IYdNz7Gzt3hDR4zPKm7.output.variable_workflow_01gpNU36xO9p17oAQVDYlDSi68ez4aofO$",
+              "row": [
+                {
+                  "key": "id",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].id$"
+                },
+                {
+                  "key": "requestGUID",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].requestGUID$"
+                },
+                {
+                  "key": "businessTransactionId",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].BusinessTransactionId$"
+                },
+                {
+                  "key": "applicationId",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].applicationId$"
+                },
+                {
+                  "key": "applicationComponentId",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].applicationComponentId$"
+                },
+                {
+                  "key": "applicationComponentNodeId",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].applicationComponentNodeId$"
+                },
+                {
+                  "key": "async",
+                  "type": "boolean",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].async$"
+                },
+                {
+                  "key": "threadID",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].threadID$"
+                },
+                {
+                  "key": "threadName",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].threadName$"
+                },
+                {
+                  "key": "errorOccured",
+                  "type": "boolean",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].errorOccured$"
+                },
+                {
+                  "key": "userExperience",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].userExperience$"
+                },
+                {
+                  "key": "timeTakenInMilliSecs",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].timeTakenInMilliSecs$"
+                },
+                {
+                  "key": "cpuTimeTakenInMilliSecs",
+                  "type": "integer",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].cpuTimeTakenInMilliSecs$"
+                },
+                {
+                  "key": "summary",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].summary$"
+                },
+                {
+                  "key": "errorSummary",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].errorSummary$"
+                },
+                {
+                  "key": "URL",
+                  "type": "string",
+                  "value": "$activity.definition_activity_01gpOaXkHkoYHqD8a5VCcJUTxkmuGSwwE.input.source_array[@].URL$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_01gpNrB2ZsN6wNqwkudkh1w0SvNAk127F": {
+      "unique_name": "tabletype_01gpNrB2ZsN6wNqwkudkh1w0SvNAk127F",
+      "data_type": "datatype.tabletype",
+      "display_name": "Retrieve Transaction Snapshots Table",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "name": "errorOccured",
+          "title": "Error Occured",
+          "type": "boolean"
+        },
+        {
+          "name": "errorSummary",
+          "title": "Error Summary",
+          "type": "string"
+        },
+        {
+          "name": "applicationComponentId",
+          "title": "Application Component ID",
+          "type": "integer"
+        },
+        {
+          "name": "async",
+          "title": "Async",
+          "type": "boolean"
+        },
+        {
+          "name": "businessTransactionId",
+          "title": "Business Transaction ID",
+          "type": "string"
+        },
+        {
+          "name": "cpuTimeTakenInMilliSecs",
+          "title": "CPU Time Taken In Milli Secs",
+          "type": "integer"
+        },
+        {
+          "name": "id",
+          "title": "ID",
+          "type": "integer"
+        },
+        {
+          "name": "summary",
+          "title": "Summary",
+          "type": "string"
+        },
+        {
+          "name": "threadName",
+          "title": "Thread Name",
+          "type": "string"
+        },
+        {
+          "name": "timeTakenInMilliSecs",
+          "title": "Time Taken In Milli Secs",
+          "type": "integer"
+        },
+        {
+          "name": "URL",
+          "title": "URL",
+          "type": "string"
+        },
+        {
+          "name": "threadID",
+          "title": "Thread ID",
+          "type": "integer"
+        },
+        {
+          "name": "userExperience",
+          "title": "User Experience",
+          "type": "string"
+        },
+        {
+          "name": "requestGUID",
+          "title": "Request GUID",
+          "type": "string"
+        },
+        {
+          "name": "applicationId",
+          "title": "Application ID",
+          "type": "integer"
+        },
+        {
+          "name": "applicationComponentNodeId",
+          "title": "Application Component Node ID",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}

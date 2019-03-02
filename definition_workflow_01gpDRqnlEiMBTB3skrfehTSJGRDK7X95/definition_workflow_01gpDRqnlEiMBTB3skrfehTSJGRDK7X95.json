@@ -1,0 +1,114 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95",
+    "name": "Create Custom Events",
+    "title": "Create Custom Events",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Event Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpheg84gU0AQ42o216iyuRwsEcEvhka",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Event Severity",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpHNHdxtsHfbaxRLP937ren3VeygqbW",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Event Type",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpHOtoTuZRVlE8tDxUDOWZPNnScfcqP",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "scope": "input",
+          "name": "Application Id",
+          "type": "datatype.integer"
+        },
+        "unique_name": "variable_workflow_01gpHk5JWMlwczvcnvLYl00cEyTdpRUzu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Event Summary",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gpHlOvdAxyrt8ZcxSRkdsUSrIssPwVl",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "AppD",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "Creates Custom Events For The Given Application Id.",
+      "display_name": "Create Custom Events",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01gpDtx9xA9sNNS92RIkpucu2ZdjWeXXO",
+        "name": "HTTP Request",
+        "title": "Create Custom Events",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "\u003cevents\u003e\r\n  \u003cevent\u003e\r\n    \u003cseverity\u003e$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpHNHdxtsHfbaxRLP937ren3VeygqbW$\u003c/severity\u003e\r\n    \u003csummary\u003e$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpHlOvdAxyrt8ZcxSRkdsUSrIssPwVl$\u003c/summary\u003e\r\n    \u003caffectedEntities\u003e\r\n      \u003centity-definition\u003e\r\n        \u003centityType\u003e$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpHOtoTuZRVlE8tDxUDOWZPNnScfcqP$\u003c/entityType\u003e\r\n        \u003centityId\u003e$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpHk5JWMlwczvcnvLYl00cEyTdpRUzu$\u003c/entityId\u003e\r\n        \u003cname\u003e$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpheg84gU0AQ42o216iyuRwsEcEvhka$\u003c/name\u003e\r\n      \u003c/entity-definition\u003e\r\n    \u003c/affectedEntities\u003e\r\n  \u003c/event\u003e\r\n\u003c/events\u003e",
+          "content_type": "application/xml",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Create Custom Events",
+          "method": "POST",
+          "relative_url": "/controller/rest/applications/$workflow.definition_workflow_01gpDRqnlEiMBTB3skrfehTSJGRDK7X95.input.variable_workflow_01gpHk5JWMlwczvcnvLYl00cEyTdpRUzu$/events",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}

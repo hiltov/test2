@@ -1,0 +1,214 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01gR48TgMhOaR55E7LmWWMvtHB0upNosk",
+    "name": "Get List of Available Namespaces",
+    "title": "Get List of Available Namespaces",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Namespaces",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01gR5t1iNWvdMlTW6zOGTjzSFNSzwHtbn",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Cisco DNA Center",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "This atomic workflow fetches list of available namespaces",
+      "display_name": "Get List of Available Namespaces",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0152DWBJYVGXZ21fTLaHbUgyA96jwI1i9jD",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {},
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR4FNTd6GKmejRTN3DFwAKmLodINCqX",
+        "name": "HTTP Request",
+        "title": "Get List of Available Namespaces",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "$global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF.global.variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF$",
+              "value": "$activity.definition_activity_0152DWBJYVGXZ21fTLaHbUgyA96jwI1i9jD.output.variable_workflow_0152CDE3YX5JE2JNcsvHyRVvv4qM3Nyb5fH$"
+            }
+          ],
+          "display_name": "Get List of Available Namespaces",
+          "method": "GET",
+          "relative_url": "/api/v1/file/namespace",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR4J2E8WpxwlVXXWNbPY2rE4txqyLma",
+        "name": "JSONPath Query",
+        "title": "Read Available Namespaces",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Available Namespaces",
+          "input_json": "$activity.definition_activity_01gR4FNTd6GKmejRTN3DFwAKmLodINCqX.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.response",
+              "jsonpath_query_name": "Namespaces",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01gR50l3M6BTuDDJzunL2ot84RwYac3AQ",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01gR50Olymyctg7SeDwbUrlcWhtD1WHu7",
+            "name": "Condition Branch",
+            "title": "If Name Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR4J2E8WpxwlVXXWNbPY2rE4txqyLma.output.jsonpath_queries.Namespaces$",
+                "operator": "ne",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Name Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR5Q3vbOoJf7nETcBu9l3uUZPbwfsm9",
+                "name": "Set Variables",
+                "title": "Set Available Namespaces",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Available Namespaces",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01gR48TgMhOaR55E7LmWWMvtHB0upNosk.output.variable_workflow_01gR5t1iNWvdMlTW6zOGTjzSFNSzwHtbn$",
+                      "variable_value_new": "$activity.definition_activity_01gR4J2E8WpxwlVXXWNbPY2rE4txqyLma.output.jsonpath_queries.Namespaces$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01gR50pp54FasGfc19lfXv1xZQOOznORU",
+            "name": "Condition Branch",
+            "title": "If Name Not Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01gR4J2E8WpxwlVXXWNbPY2rE4txqyLma.output.jsonpath_queries.Namespaces$",
+                "operator": "eq",
+                "right_operand": ""
+              },
+              "continue_on_failure": false,
+              "display_name": "If Name Not Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01gR5nc2OIdJGeq4qdGMO8QHWTX40Yivm",
+                "name": "Failed",
+                "title": "Succeeded",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "Failed to Get available namespaces"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+  ]
+}
