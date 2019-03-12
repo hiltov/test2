@@ -58,6 +58,24 @@
           "workflow_id": "definition_workflow_015OLRV6FKILE0WlmaBpJ3BAKhx7aSBH6w3"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_015OMAZ40D6FU7G78OZI8dZ6RXzOqgV0HKG",
+        "name": "atomic sleep",
+        "title": "atomic sleep",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "atomic sleep",
+          "input": {},
+          "target": {
+            "no_target": true,
+            "override_workflow_target": false
+          },
+          "workflow_id": "definition_workflow_015OLRV6FKILE0WlmaBpJ3BAKhx7aSBH6w3"
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
@@ -65,7 +83,6 @@
     ]
   },
   "atomic_workflows": [
-    "definition_workflow_015OLRV6FKILE0WlmaBpJ3BAKhx7aSBH6w3",
     "definition_workflow_015OLRV6FKILE0WlmaBpJ3BAKhx7aSBH6w3"
   ]
 }
