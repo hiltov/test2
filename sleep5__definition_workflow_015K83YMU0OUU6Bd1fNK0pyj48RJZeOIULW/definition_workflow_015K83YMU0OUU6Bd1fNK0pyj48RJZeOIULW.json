@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_015K83YMU0OUU6Bd1fNK0pyj48RJZeOIULW",
-    "name": "Sleep 55",
-    "title": "Sleep 55",
+    "name": "sleep5",
+    "title": "sleep5",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Sleep 55",
+      "display_name": "sleep5",
       "favorite": false,
       "target": {
         "execute_on_target_group": false,
