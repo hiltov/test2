@@ -1,0 +1,809 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_015VA55VGV9UA0eXcdO3G8wL81pXyaaafRh",
+    "name": "loop",
+    "title": "loop",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_015VA90CBGL584oXESq4uKaUynvb93KSDoG",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "id": 2
+              }
+            },
+            {
+              "column_data": {
+                "id": 3
+              }
+            },
+            {
+              "column_data": {
+                "id": 4
+              }
+            },
+            {
+              "column_data": {
+                "id": 5
+              }
+            },
+            {
+              "column_data": {
+                "id": 6
+              }
+            },
+            {
+              "column_data": {
+                "id": 7
+              }
+            },
+            {
+              "column_data": {
+                "id": 8
+              }
+            },
+            {
+              "column_data": {
+                "id": 9
+              }
+            },
+            {
+              "column_data": {
+                "id": 10
+              }
+            },
+            {
+              "column_data": {
+                "id": 11
+              }
+            },
+            {
+              "column_data": {
+                "id": 12
+              }
+            },
+            {
+              "column_data": {
+                "id": 13
+              }
+            },
+            {
+              "column_data": {
+                "id": 14
+              }
+            },
+            {
+              "column_data": {
+                "id": 15
+              }
+            },
+            {
+              "column_data": {
+                "id": 16
+              }
+            },
+            {
+              "column_data": {
+                "id": 17
+              }
+            },
+            {
+              "column_data": {
+                "id": 18
+              }
+            },
+            {
+              "column_data": {
+                "id": 19
+              }
+            },
+            {
+              "column_data": {
+                "id": 20
+              }
+            },
+            {
+              "column_data": {
+                "id": 21
+              }
+            },
+            {
+              "column_data": {
+                "id": 22
+              }
+            },
+            {
+              "column_data": {
+                "id": 23
+              }
+            },
+            {
+              "column_data": {
+                "id": 24
+              }
+            },
+            {
+              "column_data": {
+                "id": 25
+              }
+            },
+            {
+              "column_data": {
+                "id": 26
+              }
+            },
+            {
+              "column_data": {
+                "id": 27
+              }
+            },
+            {
+              "column_data": {
+                "id": 28
+              }
+            },
+            {
+              "column_data": {
+                "id": 29
+              }
+            },
+            {
+              "column_data": {
+                "id": 30
+              }
+            },
+            {
+              "column_data": {
+                "id": 31
+              }
+            },
+            {
+              "column_data": {
+                "id": 32
+              }
+            },
+            {
+              "column_data": {
+                "id": 33
+              }
+            },
+            {
+              "column_data": {
+                "id": 34
+              }
+            },
+            {
+              "column_data": {
+                "id": 35
+              }
+            },
+            {
+              "column_data": {
+                "id": 36
+              }
+            },
+            {
+              "column_data": {
+                "id": 37
+              }
+            },
+            {
+              "column_data": {
+                "id": 38
+              }
+            },
+            {
+              "column_data": {
+                "id": 39
+              }
+            },
+            {
+              "column_data": {
+                "id": 40
+              }
+            },
+            {
+              "column_data": {
+                "id": 41
+              }
+            },
+            {
+              "column_data": {
+                "id": 42
+              }
+            },
+            {
+              "column_data": {
+                "id": 43
+              }
+            },
+            {
+              "column_data": {
+                "id": 44
+              }
+            },
+            {
+              "column_data": {
+                "id": 45
+              }
+            },
+            {
+              "column_data": {
+                "id": 46
+              }
+            },
+            {
+              "column_data": {
+                "id": 47
+              }
+            },
+            {
+              "column_data": {
+                "id": 48
+              }
+            },
+            {
+              "column_data": {
+                "id": 49
+              }
+            },
+            {
+              "column_data": {
+                "id": 50
+              }
+            },
+            {
+              "column_data": {
+                "id": 51
+              }
+            },
+            {
+              "column_data": {
+                "id": 52
+              }
+            },
+            {
+              "column_data": {
+                "id": 53
+              }
+            },
+            {
+              "column_data": {
+                "id": 54
+              }
+            },
+            {
+              "column_data": {
+                "id": 55
+              }
+            },
+            {
+              "column_data": {
+                "id": 56
+              }
+            },
+            {
+              "column_data": {
+                "id": 57
+              }
+            },
+            {
+              "column_data": {
+                "id": 58
+              }
+            },
+            {
+              "column_data": {
+                "id": 59
+              }
+            },
+            {
+              "column_data": {
+                "id": 60
+              }
+            },
+            {
+              "column_data": {
+                "id": 61
+              }
+            },
+            {
+              "column_data": {
+                "id": 62
+              }
+            },
+            {
+              "column_data": {
+                "id": 63
+              }
+            },
+            {
+              "column_data": {
+                "id": 64
+              }
+            },
+            {
+              "column_data": {
+                "id": 65
+              }
+            },
+            {
+              "column_data": {
+                "id": 66
+              }
+            },
+            {
+              "column_data": {
+                "id": 67
+              }
+            },
+            {
+              "column_data": {
+                "id": 68
+              }
+            },
+            {
+              "column_data": {
+                "id": 69
+              }
+            },
+            {
+              "column_data": {
+                "id": 70
+              }
+            },
+            {
+              "column_data": {
+                "id": 71
+              }
+            },
+            {
+              "column_data": {
+                "id": 72
+              }
+            },
+            {
+              "column_data": {
+                "id": 73
+              }
+            },
+            {
+              "column_data": {
+                "id": 74
+              }
+            },
+            {
+              "column_data": {
+                "id": 75
+              }
+            },
+            {
+              "column_data": {
+                "id": 76
+              }
+            },
+            {
+              "column_data": {
+                "id": 77
+              }
+            },
+            {
+              "column_data": {
+                "id": 78
+              }
+            },
+            {
+              "column_data": {
+                "id": 79
+              }
+            },
+            {
+              "column_data": {
+                "id": 80
+              }
+            },
+            {
+              "column_data": {
+                "id": 81
+              }
+            },
+            {
+              "column_data": {
+                "id": 82
+              }
+            },
+            {
+              "column_data": {
+                "id": 83
+              }
+            },
+            {
+              "column_data": {
+                "id": 84
+              }
+            },
+            {
+              "column_data": {
+                "id": 85
+              }
+            },
+            {
+              "column_data": {
+                "id": 86
+              }
+            },
+            {
+              "column_data": {
+                "id": 87
+              }
+            },
+            {
+              "column_data": {
+                "id": 88
+              }
+            },
+            {
+              "column_data": {
+                "id": 89
+              }
+            },
+            {
+              "column_data": {
+                "id": 90
+              }
+            },
+            {
+              "column_data": {
+                "id": 91
+              }
+            },
+            {
+              "column_data": {
+                "id": 92
+              }
+            },
+            {
+              "column_data": {
+                "id": 93
+              }
+            },
+            {
+              "column_data": {
+                "id": 94
+              }
+            },
+            {
+              "column_data": {
+                "id": 95
+              }
+            },
+            {
+              "column_data": {
+                "id": 96
+              }
+            },
+            {
+              "column_data": {
+                "id": 97
+              }
+            },
+            {
+              "column_data": {
+                "id": 98
+              }
+            },
+            {
+              "column_data": {
+                "id": 99
+              }
+            },
+            {
+              "column_data": {
+                "id": 100
+              }
+            },
+            {
+              "column_data": {
+                "id": 101
+              }
+            },
+            {
+              "column_data": {
+                "id": 102
+              }
+            },
+            {
+              "column_data": {
+                "id": 103
+              }
+            },
+            {
+              "column_data": {
+                "id": 104
+              }
+            },
+            {
+              "column_data": {
+                "id": 105
+              }
+            },
+            {
+              "column_data": {
+                "id": 106
+              }
+            },
+            {
+              "column_data": {
+                "id": 107
+              }
+            },
+            {
+              "column_data": {
+                "id": 108
+              }
+            },
+            {
+              "column_data": {
+                "id": 109
+              }
+            },
+            {
+              "column_data": {
+                "id": 110
+              }
+            },
+            {
+              "column_data": {
+                "id": 111
+              }
+            },
+            {
+              "column_data": {
+                "id": 202
+              }
+            },
+            {
+              "column_data": {
+                "id": 203
+              }
+            },
+            {
+              "column_data": {
+                "id": 204
+              }
+            },
+            {
+              "column_data": {
+                "id": 205
+              }
+            },
+            {
+              "column_data": {
+                "id": 206
+              }
+            },
+            {
+              "column_data": {
+                "id": 207
+              }
+            },
+            {
+              "column_data": {
+                "id": 208
+              }
+            },
+            {
+              "column_data": {
+                "id": 209
+              }
+            },
+            {
+              "column_data": {
+                "id": 210
+              }
+            },
+            {
+              "column_data": {
+                "id": 211
+              }
+            },
+            {
+              "column_data": {
+                "id": 302
+              }
+            },
+            {
+              "column_data": {
+                "id": 303
+              }
+            },
+            {
+              "column_data": {
+                "id": 304
+              }
+            },
+            {
+              "column_data": {
+                "id": 305
+              }
+            },
+            {
+              "column_data": {
+                "id": 306
+              }
+            },
+            {
+              "column_data": {
+                "id": 307
+              }
+            },
+            {
+              "column_data": {
+                "id": 308
+              }
+            },
+            {
+              "column_data": {
+                "id": 309
+              }
+            },
+            {
+              "column_data": {
+                "id": 310
+              }
+            },
+            {
+              "column_data": {
+                "id": 311
+              }
+            },
+            {
+              "column_data": {
+                "id": 402
+              }
+            },
+            {
+              "column_data": {
+                "id": 403
+              }
+            },
+            {
+              "column_data": {
+                "id": 404
+              }
+            },
+            {
+              "column_data": {
+                "id": 405
+              }
+            },
+            {
+              "column_data": {
+                "id": 406
+              }
+            },
+            {
+              "column_data": {
+                "id": 407
+              }
+            },
+            {
+              "column_data": {
+                "id": 408
+              }
+            },
+            {
+              "column_data": {
+                "id": 409
+              }
+            },
+            {
+              "column_data": {
+                "id": 410
+              }
+            },
+            {
+              "column_data": {
+                "id": 411
+              }
+            },
+            {
+              "column_data": {
+                "id": 502
+              }
+            }
+          ],
+          "scope": "static",
+          "name": "t1",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_015VA96PTXUAO65SfiNBlPGmrg5XGDy4pbq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 501,
+          "scope": "static",
+          "name": "int",
+          "type": "datatype.integer"
+        },
+        "unique_name": "variable_workflow_015VA6QRBK2TQ78zFoocSepS1XfhFn3nuQz",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "loop",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_015VA7NM2N0T76DZmRHai1uZBcTZEiENX5d",
+        "name": "For Each",
+        "title": "For Each",
+        "type": "logic.for_each",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "For Each",
+          "source_array": "$workflow.definition_workflow_015VA55VGV9UA0eXcdO3G8wL81pXyaaafRh.static.variable_workflow_015VA96PTXUAO65SfiNBlPGmrg5XGDy4pbq$"
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_015VAADG09FMU6qpvocuGr91bgQv8xOd0j0",
+            "name": "To Upper",
+            "title": "To Upper",
+            "type": "core.string2upper",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "To Upper",
+              "source": "qwert"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_015VA90CBGL584oXESq4uKaUynvb93KSDoG": {
+      "unique_name": "tabletype_015VA90CBGL584oXESq4uKaUynvb93KSDoG",
+      "data_type": "datatype.tabletype",
+      "display_name": "t",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "is_required": true,
+          "name": "id",
+          "title": "id",
+          "type": "integer"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
