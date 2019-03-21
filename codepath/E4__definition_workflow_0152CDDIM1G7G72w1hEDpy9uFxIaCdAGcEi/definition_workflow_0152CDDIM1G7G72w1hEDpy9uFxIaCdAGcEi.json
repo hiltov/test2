@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi",
-    "name": "Get Access Token",
-    "title": "Get Access Token",
+    "name": "Get Access Token ",
+    "title": "Get Access Token ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -23,7 +23,7 @@
         "is_atomic": true
       },
       "delete_workflow_instance": false,
-      "display_name": "Get Access Token",
+      "display_name": "Get Access Token ",
       "favorite": false,
       "target": {
         "target_type": "web-service.endpoint",
