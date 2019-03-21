@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_015V8NH8IBBYF6aAwFi6GvDc64VIcEhFJYc",
-    "name": "http test new",
-    "title": "http test new",
+    "name": "http test new 2",
+    "title": "http test new 2",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "http test new",
+      "display_name": "http test new 2",
       "favorite": false,
       "target": {
         "execute_on_target_group": false,
