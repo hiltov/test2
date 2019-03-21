@@ -11,6 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "test hiisafosf",
       "display_name": "Test Workflow - Murali",
       "favorite": false,
       "target": {
