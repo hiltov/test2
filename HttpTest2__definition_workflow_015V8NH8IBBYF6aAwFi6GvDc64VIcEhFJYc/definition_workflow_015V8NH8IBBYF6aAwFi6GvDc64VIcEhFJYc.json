@@ -31,8 +31,9 @@
         "type": "web-service.http_request",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
+          "action_timeout": 179,
           "allow_auto_redirect": true,
+          "content_type": "text/html",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
           "display_name": "HTTP Request",
