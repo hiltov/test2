@@ -34,7 +34,7 @@
           "continue_on_failure": false,
           "display_name": "Find String",
           "searched_string": "qwert",
-          "source": "asdfg"
+          "source": "qwerty"
         },
         "object_type": "definition_activity"
       }
