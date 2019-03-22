@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_015X0XTVJKLA057Dbsek4n7C61Abzt2ooiR",
-    "name": "New WF 3   ",
-    "title": "New WF 3   ",
+    "name": "New WF 3     ",
+    "title": "New WF 3     ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "New WF 3   ",
+      "display_name": "New WF 3     ",
       "favorite": false,
       "target": {
         "execute_on_target_group": false,
