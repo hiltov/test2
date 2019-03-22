@@ -1,0 +1,46 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_015X0XTVJKLA057Dbsek4n7C61Abzt2ooiR",
+    "name": "New WF 3",
+    "title": "New WF 3",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "New WF 3",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false,
+        "target_type": "015UQFFTE40751KodXB6GomQ6FtkyLnttlz"
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_015X0Y0PLH1RT2E9QP4t5gtYqvN0SYFS2AL",
+        "name": "Find String",
+        "title": "Find String",
+        "type": "core.find_string",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Find String",
+          "searched_string": "asdf",
+          "source": "qwert"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
