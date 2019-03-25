@@ -37,6 +37,33 @@
         "object_type": "definition_activity"
       },
       {
+        "unique_name": "definition_activity_015ZKWV8U0Q1C6rLXPNqxsgFzUueXfDZxSh",
+        "name": "qwerty",
+        "title": "qwerty",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "qwerty",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "override_workflow_target": false,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_015ZGOQCII1OT2xZiYPIJhoHG5r0diDfgJv"
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_015ZKTKVYQOZI26gVzzKHuoMJptDugdO3lH",
         "name": "Atomic Sleep",
         "title": "Atomic Sleep",
@@ -69,6 +96,53 @@
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
   },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_015ZGOQCII1OT2xZiYPIJhoHG5r0diDfgJv",
+        "name": "qwerty",
+        "title": "qwerty",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "qwerty",
+          "favorite": false,
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_015ZGOSWADL7W2jsZ7TxUm4kwsmpblEnFkw",
+            "name": "Find String",
+            "title": "Find String",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Find String",
+              "searched_string": "qwert",
+              "source": "qwerty"
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
   "atomic_workflows": [
     "definition_workflow_015ZKSGN58IN33CVrPnpaqVExNuPo4m8T0O"
   ]
