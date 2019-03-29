@@ -1,0 +1,46 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_015ZPDBH4OLEC50rMKA5z5ErslIznLCVyQh",
+    "name": "new",
+    "title": "new",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "new",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false,
+        "target_type": "015ZFJHEYPV4R2g6t948MxCv3Ly6jqDALvk"
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_015ZPDJ34M7EI15F1KTYah9QABgxXhSkTq9",
+        "name": "Find String",
+        "title": "Find Custom String",
+        "type": "core.find_string",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Find Custom String",
+          "searched_string": "q",
+          "source": "q"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
