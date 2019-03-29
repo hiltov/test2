@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_0162ZCFAOWHRJ0lOr6NXaLIeiSU4ImVXqKp",
-    "name": "TEST NEXTG-11502",
-    "title": "TEST NEXTG-11502",
+    "name": "TEST NEXTG-11502 ",
+    "title": "TEST NEXTG-11502 ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "TEST NEXTG-11502",
+      "display_name": "TEST NEXTG-11502 ",
       "favorite": false,
       "target": {
         "execute_on_target_group": false,
