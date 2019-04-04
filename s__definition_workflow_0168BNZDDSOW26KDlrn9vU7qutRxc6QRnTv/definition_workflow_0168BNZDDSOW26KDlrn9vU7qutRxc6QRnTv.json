@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_0168BNZDDSOW26KDlrn9vU7qutRxc6QRnTv",
-    "name": "s",
-    "title": "s",
+    "name": "s ",
+    "title": "s ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "s",
+      "display_name": "s ",
       "favorite": false,
       "target": {
         "execute_on_target_group": false,
@@ -24,19 +24,18 @@
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_0168BOPZFLSXR70zbyDCAK3swryq6WEFNyS",
-        "name": "atomic",
-        "title": "atomic",
-        "type": "workflow.atomic_workflow",
+        "unique_name": "definition_activity_0168C28PSPOUT1EB0bdIFKRzeNEgHks9opx",
+        "name": "fs",
+        "title": "fs",
+        "type": "workflow.sub_workflow",
         "base_type": "subworkflow",
         "properties": {
           "atomic": {
-            "atomic_group": "Atomic Workflows",
-            "is_atomic": true
+            "is_atomic": false
           },
           "continue_on_failure": false,
           "delete_workflow_instance": false,
-          "display_name": "atomic",
+          "display_name": "fs",
           "favorite": false,
           "input": {},
           "target": {
@@ -47,35 +46,7 @@
             "specify_on_workflow_start": false
           },
           "timeout": 3600,
-          "workflow_id": "definition_workflow_0168BNC4U5LXN2H5rgruBfM4AaCVUwM7BIF"
-        },
-        "object_type": "definition_activity"
-      },
-      {
-        "unique_name": "definition_activity_0168BQT9S448Y2s1BM9oWwpDcxpHVOrDOQS",
-        "name": "atomic",
-        "title": "atomic",
-        "type": "workflow.atomic_workflow",
-        "base_type": "subworkflow",
-        "properties": {
-          "atomic": {
-            "atomic_group": "Atomic Workflows",
-            "is_atomic": true
-          },
-          "continue_on_failure": false,
-          "delete_workflow_instance": false,
-          "display_name": "atomic",
-          "favorite": false,
-          "input": {},
-          "target": {
-            "execute_on_target_group": false,
-            "execute_on_workflow_target": false,
-            "no_target": true,
-            "override_workflow_target": false,
-            "specify_on_workflow_start": false
-          },
-          "timeout": 3600,
-          "workflow_id": "definition_workflow_0168BNC4U5LXN2H5rgruBfM4AaCVUwM7BIF"
+          "workflow_id": "definition_workflow_0168C1TIORN065wA3e8xpdNPbU1LOzSWKEV"
         },
         "object_type": "definition_activity"
       }
@@ -84,7 +55,51 @@
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
   },
-  "atomic_workflows": [
-    "definition_workflow_0168BNC4U5LXN2H5rgruBfM4AaCVUwM7BIF"
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0168C1TIORN065wA3e8xpdNPbU1LOzSWKEV",
+        "name": "fs",
+        "title": "fs",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "fs",
+          "favorite": false,
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0168C1YYDQUXI50BjA9Q2h4XY1qjvKPM5VB",
+            "name": "Find String",
+            "title": "Find String",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Find String",
+              "searched_string": "q",
+              "source": "q"
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
   ]
 }
