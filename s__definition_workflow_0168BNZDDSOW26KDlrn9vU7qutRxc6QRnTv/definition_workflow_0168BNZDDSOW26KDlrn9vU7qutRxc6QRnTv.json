@@ -50,6 +50,34 @@
           "workflow_id": "definition_workflow_0168BNC4U5LXN2H5rgruBfM4AaCVUwM7BIF"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0168BQT9S448Y2s1BM9oWwpDcxpHVOrDOQS",
+        "name": "atomic",
+        "title": "atomic",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Atomic Workflows",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "atomic",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "override_workflow_target": false,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_0168BNC4U5LXN2H5rgruBfM4AaCVUwM7BIF"
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
