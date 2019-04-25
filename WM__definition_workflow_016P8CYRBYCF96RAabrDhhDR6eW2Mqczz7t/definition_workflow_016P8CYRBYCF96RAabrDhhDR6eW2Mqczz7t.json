@@ -1,0 +1,363 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016P8CYRBYCF96RAabrDhhDR6eW2Mqczz7t",
+    "name": "WM",
+    "title": "WM",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "depends_on": "CC",
+      "display_name": "WM",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016P8D5UCURRB2bYzFoVetT5pWYiY8JllTm",
+        "name": "Get Workload Manager Context",
+        "title": "Get Workload Manager Context",
+        "type": "ccs.get_cloud_context",
+        "base_type": "activity",
+        "properties": {
+          "action_id": "53",
+          "action_timeout": 180,
+          "cc_configuration": {
+            "execute_action": "external",
+            "reboot_vm": false,
+            "resource_mappings": [
+              {
+                "applied_to": {
+                  "app_ids": [
+                    {
+                      "id": "ALL",
+                      "name": "All"
+                    }
+                  ]
+                },
+                "resource_type": "app_profile",
+                "resource_type_meta_info": {
+                  "app_profile": {
+                    "app_ids": "All"
+                  }
+                }
+              },
+              {
+                "applied_to": {
+                  "service": [
+                    {
+                      "id": "51",
+                      "label": "sqlserver2k12",
+                      "name": "sqlserver2k12",
+                      "selected": true,
+                      "value": "51"
+                    },
+                    {
+                      "id": "62",
+                      "label": "puppet",
+                      "name": "puppet",
+                      "selected": true,
+                      "value": "62"
+                    },
+                    {
+                      "id": "14",
+                      "label": "geronimo3",
+                      "name": "geronimo3",
+                      "selected": true,
+                      "value": "14"
+                    },
+                    {
+                      "id": "6",
+                      "label": "varnish",
+                      "name": "varnish",
+                      "selected": true,
+                      "value": "6"
+                    },
+                    {
+                      "id": "33",
+                      "label": "rabbitmq",
+                      "name": "rabbitmq",
+                      "selected": true,
+                      "value": "33"
+                    },
+                    {
+                      "id": "43",
+                      "label": "CentOS",
+                      "name": "CentOS",
+                      "selected": true,
+                      "value": "43"
+                    },
+                    {
+                      "id": "5",
+                      "label": "rubyonrails",
+                      "name": "rubyonrails",
+                      "selected": true,
+                      "value": "5"
+                    },
+                    {
+                      "id": "3",
+                      "label": "jmeter",
+                      "name": "jmeter",
+                      "selected": true,
+                      "value": "3"
+                    },
+                    {
+                      "id": "2",
+                      "label": "hadoop",
+                      "name": "hadoop",
+                      "selected": true,
+                      "value": "2"
+                    },
+                    {
+                      "id": "47",
+                      "label": "Windows",
+                      "name": "Windows",
+                      "selected": true,
+                      "value": "47"
+                    },
+                    {
+                      "id": "46",
+                      "label": "Ubuntu",
+                      "name": "Ubuntu",
+                      "selected": true,
+                      "value": "46"
+                    },
+                    {
+                      "id": "12",
+                      "label": "nginx",
+                      "name": "nginx",
+                      "selected": true,
+                      "value": "12"
+                    },
+                    {
+                      "id": "11",
+                      "label": "memcached",
+                      "name": "memcached",
+                      "selected": true,
+                      "value": "11"
+                    },
+                    {
+                      "id": "9",
+                      "label": "haproxy",
+                      "name": "haproxy",
+                      "selected": true,
+                      "value": "9"
+                    },
+                    {
+                      "id": "22",
+                      "label": "mysql",
+                      "name": "mysql",
+                      "selected": true,
+                      "value": "22"
+                    },
+                    {
+                      "id": "17",
+                      "label": "gluster2",
+                      "name": "gluster2",
+                      "selected": true,
+                      "value": "17"
+                    },
+                    {
+                      "id": "7",
+                      "label": "tomcat6",
+                      "name": "tomcat6",
+                      "selected": true,
+                      "value": "7"
+                    },
+                    {
+                      "id": "15",
+                      "label": "activemq",
+                      "name": "activemq",
+                      "selected": true,
+                      "value": "15"
+                    },
+                    {
+                      "id": "10",
+                      "label": "mongodb",
+                      "name": "mongodb",
+                      "selected": true,
+                      "value": "10"
+                    },
+                    {
+                      "id": "13",
+                      "label": "tomcat7",
+                      "name": "tomcat7",
+                      "selected": true,
+                      "value": "13"
+                    },
+                    {
+                      "id": "16",
+                      "label": "apache2",
+                      "name": "apache2",
+                      "selected": true,
+                      "value": "16"
+                    },
+                    {
+                      "id": "50",
+                      "label": "rdsmysql",
+                      "name": "rdsmysql",
+                      "selected": true,
+                      "value": "50"
+                    },
+                    {
+                      "id": "63",
+                      "label": "chef",
+                      "name": "chef",
+                      "selected": true,
+                      "value": "63"
+                    },
+                    {
+                      "id": "30",
+                      "label": "sqlserver2k8r2",
+                      "name": "sqlserver2k8r2",
+                      "selected": true,
+                      "value": "30"
+                    },
+                    {
+                      "id": "45",
+                      "label": "SLES",
+                      "name": "SLES",
+                      "selected": true,
+                      "value": "45"
+                    },
+                    {
+                      "id": "44",
+                      "label": "RHEL",
+                      "name": "RHEL",
+                      "selected": true,
+                      "value": "44"
+                    },
+                    {
+                      "id": "67",
+                      "label": "mysqlcontainer",
+                      "name": "mysqlcontainer",
+                      "selected": true,
+                      "value": "67"
+                    },
+                    {
+                      "id": "31",
+                      "label": "iis",
+                      "name": "iis",
+                      "selected": true,
+                      "value": "31"
+                    },
+                    {
+                      "id": "65",
+                      "label": "apache2container",
+                      "name": "apache2container",
+                      "selected": true,
+                      "value": "65"
+                    },
+                    {
+                      "id": "66",
+                      "label": "mongocontainer",
+                      "name": "mongocontainer",
+                      "selected": true,
+                      "value": "66"
+                    },
+                    {
+                      "id": "64",
+                      "label": "nginxcontainer",
+                      "name": "nginxcontainer",
+                      "selected": true,
+                      "value": "64"
+                    },
+                    {
+                      "id": "54",
+                      "label": "awselb",
+                      "name": "awselb",
+                      "selected": true,
+                      "value": "54"
+                    },
+                    {
+                      "id": "8",
+                      "label": "cassandra",
+                      "name": "cassandra",
+                      "selected": true,
+                      "value": "8"
+                    },
+                    {
+                      "id": "34",
+                      "label": "jetty",
+                      "name": "jetty",
+                      "selected": true,
+                      "value": "34"
+                    },
+                    {
+                      "id": "55",
+                      "label": "docker",
+                      "name": "docker",
+                      "selected": true,
+                      "value": "55"
+                    }
+                  ]
+                },
+                "resource_type": "service",
+                "resource_type_meta_info": {
+                  "service": {
+                    "service": "All"
+                  }
+                }
+              },
+              {
+                "applied_to": {
+                  "cloud_region": [
+                    {
+                      "id": "1",
+                      "name": "US East (N. Virginia)"
+                    }
+                  ]
+                },
+                "resource_type": "cloud_region",
+                "resource_type_meta_info": {
+                  "cloud_region": {
+                    "cloud_region": "All"
+                  }
+                }
+              }
+            ],
+            "sync_vm": false,
+            "wf_availability_type": "lifecycle"
+          },
+          "cc_run_id": "1",
+          "continue_on_failure": false,
+          "display_name": "Get Workload Manager Context",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016P9LB2HZ2BI0Z8UQ7ighGHyPz5lZ8n1Pi",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "source": "$activity.definition_activity_016P8D5UCURRB2bYzFoVetT5pWYiY8JllTm.output.response_body$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
