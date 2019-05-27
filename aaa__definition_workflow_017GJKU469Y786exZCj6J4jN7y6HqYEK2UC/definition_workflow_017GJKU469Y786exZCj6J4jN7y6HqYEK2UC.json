@@ -14,9 +14,8 @@
       "display_name": "aaa",
       "favorite": false,
       "runtime_user": {
-        "override_target_runtime_user": false,
-        "specify_on_workflow_start": false,
-        "target_default": true
+        "override_target_runtime_user": true,
+        "runtime_user_id": "definition_runtime_user_01774KDZP783R5gxui5hayHnKIkXwFWNnIK"
       },
       "target": {
         "target_type": "terminal.unix_linux_endpoint",
