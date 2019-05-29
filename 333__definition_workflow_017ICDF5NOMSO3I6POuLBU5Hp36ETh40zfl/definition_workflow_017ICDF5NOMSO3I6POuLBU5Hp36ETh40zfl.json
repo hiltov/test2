@@ -1,0 +1,71 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_017ICDF5NOMSO3I6POuLBU5Hp36ETh40zfl",
+    "name": "333",
+    "title": "333",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "str",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_017ICME9M7TFM5fwwPahEJAkCDLDuMW19Jv",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "333",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "runtime_user_type": "017741G9WEUM15wuSRuCcEPpTcLR0Da4Nz2",
+        "specify_on_workflow_start": true
+      },
+      "target": {
+        "target_type": "terminal.unix_linux_endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_017ICDYVFP3EM480v24H3d6nj8AlGvAd0QZ",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "ls",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
