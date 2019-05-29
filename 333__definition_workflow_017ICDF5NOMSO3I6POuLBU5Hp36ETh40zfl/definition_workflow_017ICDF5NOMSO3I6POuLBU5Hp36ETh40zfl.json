@@ -24,6 +24,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "desc",
       "display_name": "333",
       "favorite": false,
       "runtime_user": {
