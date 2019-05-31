@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_017JO55B9GM7X6go5bxmoNsaga4ZHEskCtm",
-    "name": "git test",
-    "title": "git test",
+    "name": "git test ",
+    "title": "git test ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "git test",
+      "display_name": "git test ",
       "favorite": false,
       "target": {
         "target_type": "terminal.unix_linux_endpoint",
