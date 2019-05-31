@@ -1,0 +1,74 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_017KRN0J9K24V6F0tuXEgFlG0NqDDE4NhWh",
+    "name": "group",
+    "title": "group",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "group",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
+          "run_on_all_targets": true,
+          "selected_target_types": [
+            "terminal.unix_linux_endpoint"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_017KRN8ZEW27G5LbUs2NZKGSIpCBh1T0FSA",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "ls",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "use_workflow_target_group": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "target_groups": {
+    "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9": {
+      "unique_name": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
+      "name": "tg",
+      "title": "tg",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "terminal.unix_linux_endpoint",
+          "view_target_type": "terminal.unix_linux_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  }
+}
