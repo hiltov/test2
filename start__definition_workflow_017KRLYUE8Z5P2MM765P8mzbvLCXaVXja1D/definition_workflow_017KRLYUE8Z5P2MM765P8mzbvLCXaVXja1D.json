@@ -1,0 +1,53 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_017KRLYUE8Z5P2MM765P8mzbvLCXaVXja1D",
+    "name": "start",
+    "title": "start",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "start",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.unix_linux_endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_017KRM97WI99H7G9WlsmW5k4ZUWAADDT0oX",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "ls",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
