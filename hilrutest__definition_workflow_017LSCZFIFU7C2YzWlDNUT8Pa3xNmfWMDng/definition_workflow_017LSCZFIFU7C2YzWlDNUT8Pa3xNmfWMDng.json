@@ -34,8 +34,8 @@
           "continue_on_failure": false,
           "display_name": "Execute Linux/Unix SSH Command",
           "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
+            "override_target_runtime_user": true,
+            "runtime_user_id": "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ"
           },
           "target": {
             "override_workflow_target": false,
@@ -69,6 +69,19 @@
     }
   },
   "runtime_users": {
+    "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ": {
+      "unique_name": "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ",
+      "name": "MB_GCP_key",
+      "title": "MB_GCP_key",
+      "type": "runtime_user.terminal_key_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "MB_GCP_key",
+        "key": "*****",
+        "user": "*****"
+      }
+    },
     "definition_runtime_user_017KRK8LTH4K71dsKVLdWzv22KdUbpnRhxP": {
       "unique_name": "definition_runtime_user_017KRK8LTH4K71dsKVLdWzv22KdUbpnRhxP",
       "name": "root",
