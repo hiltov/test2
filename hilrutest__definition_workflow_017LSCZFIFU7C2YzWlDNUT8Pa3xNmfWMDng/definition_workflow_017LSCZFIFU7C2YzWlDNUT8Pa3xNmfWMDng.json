@@ -14,7 +14,7 @@
       "display_name": "hil ru test",
       "favorite": false,
       "runtime_user": {
-        "runtime_user_id": "017KSEX3LW4S06R8FEsIVm9x0j8N0u8hNxp",
+        "runtime_user_id": "definition_runtime_user_017KSEX7U6U3F3MGV7QPMfocDy0u5v7UVZS",
         "override_target_runtime_user": true,
         "runtime_user_type": "runtime_user.terminal_password_credentials"
       },
@@ -83,6 +83,19 @@
       "object_type": "definition_runtime_user",
       "properties": {
         "display_name": "root",
+        "password": "*****",
+        "user": "*****"
+      }
+    },
+    "definition_runtime_user_017KSEX7U6U3F3MGV7QPMfocDy0u5v7UVZS": {
+      "unique_name": "definition_runtime_user_017KSEX7U6U3F3MGV7QPMfocDy0u5v7UVZS",
+      "name": "qetest",
+      "title": "qetest",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "qetest",
         "password": "*****",
         "user": "*****"
       }
