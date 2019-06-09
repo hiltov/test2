@@ -15,8 +15,8 @@
       "favorite": false,
       "runtime_user": {
         "override_target_runtime_user": false,
-        "specify_on_workflow_start": false,
-        "target_default": true
+        "runtime_user_type": "017KR6DIIHPCE51oCHTCgB6UfEiffVBUxAH",
+        "specify_on_workflow_start": true
       },
       "target": {
         "target_type": "terminal.unix_linux_endpoint",
@@ -25,6 +25,31 @@
     },
     "object_type": "definition_workflow",
     "actions": [
+      {
+        "unique_name": "definition_activity_017SHXDY64IB62pkEOIh1O0xvM38DqJ8eIH",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "ls",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
       {
         "unique_name": "definition_activity_017SHVUJM6NT62AMMV2dr3qPqxnc8E99ksw",
         "name": "Sleep",
