@@ -60,6 +60,7 @@
         "base_type": "subworkflow",
         "properties": {
           "continue_on_failure": false,
+          "description": " ",
           "display_name": "atomic",
           "input": {},
           "runtime_user": {
