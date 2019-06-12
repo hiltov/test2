@@ -38,8 +38,9 @@
           "display_name": "windows ssh",
           "input": {},
           "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
+            "override_target_runtime_user": true,
+            "runtime_user_id": "definition_runtime_user_017KRK8LTH4K71dsKVLdWzv22KdUbpnRhxP",
+            "runtime_user_type": "017KR6DIIHPCE51oCHTCgB6UfEiffVBUxAH"
           },
           "target": {
             "execute_on_this_target": true,
