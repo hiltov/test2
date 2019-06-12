@@ -39,7 +39,7 @@
           "runtime_user": {
             "override_target_runtime_user": true,
             "runtime_user_id": "definition_runtime_user_017NHVIOF82BS3hAnXSx3277o9UEIFLy2DD",
-            "runtime_user_type": "017KR6DIIHPCE51oCHTCgB6UfEiffVBUxAH"
+            "runtime_user_type": "runtime_user.terminal_password_credentials"
           },
           "target": {
             "execute_on_this_target": true,
