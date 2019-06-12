@@ -34,7 +34,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "command": "ls",
+          "command": "ls -la",
           "command_timeout": 60,
           "continue_on_failure": false,
           "display_name": "Execute Linux/Unix SSH Command",
