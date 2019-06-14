@@ -11,6 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": " ",
       "display_name": "parentnew",
       "favorite": false,
       "runtime_user": {
@@ -108,10 +109,26 @@
       "object_type": "definition_target",
       "properties": {
         "default_runtime_user_id": "definition_runtime_user_017U3BOL27ULT1EZjHmANsXtCoI28zfai1b",
+        "description": " ",
         "display_name": "aus-sap-stress2.tidalsoft.local",
         "host": "aus-sap-stress2.tidalsoft.local",
         "port": 22,
         "protocol": "ssh"
+      }
+    },
+    "definition_target_017UZWUZVBS6824vbChQ3U7vygfCUC5drh1": {
+      "unique_name": "definition_target_017UZWUZVBS6824vbChQ3U7vygfCUC5drh1",
+      "name": "aus-sap-stress2.tidalsoft.local unix linux",
+      "title": "aus-sap-stress2.tidalsoft.local unix linux",
+      "type": "terminal.unix_linux_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "bash_shell": "/",
+        "default_runtime_user_id": "definition_runtime_user_017U3BOL27ULT1EZjHmANsXtCoI28zfai1b",
+        "display_name": "aus-sap-stress2.tidalsoft.local unix linux",
+        "host": "aus-sap-stress2.tidalsoft.local",
+        "port": 22
       }
     }
   },
@@ -186,6 +203,29 @@
         "object_type": "definition_workflow",
         "actions": [
           {
+            "unique_name": "definition_activity_017UZX6LBEPJP06SCFcDmsreKpPYI32g3g4",
+            "name": "Execute Linux/Unix SSH Command",
+            "title": "Execute Linux/Unix SSH Command",
+            "type": "terminal.ssh_command",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "command": "dir",
+              "command_timeout": 60,
+              "continue_on_failure": false,
+              "display_name": "Execute Linux/Unix SSH Command",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_017UZWUZVBS6824vbChQ3U7vygfCUC5drh1"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
             "unique_name": "definition_activity_017U3CR35T0IH5zjFLDyn25s5whUniusYmH",
             "name": "Execute Terminal Command(s)",
             "title": "Execute Terminal Command(s)",
@@ -194,7 +234,7 @@
             "properties": {
               "action_timeout": 180,
               "command_timeout": 60,
-              "commands": "dir",
+              "commands": "cd c:\\sql\ndir",
               "continue_on_failure": false,
               "display_name": "Execute Terminal Command(s)",
               "merge_commands": false,
