@@ -14,11 +14,6 @@
       "display_name": "subssh",
       "favorite": false,
       "required": null,
-      "runtime_user": {
-        "override_target_runtime_user": false,
-        "specify_on_workflow_start": false,
-        "target_default": true
-      },
       "target": {
         "execute_on_target_group": true,
         "target_group": {
