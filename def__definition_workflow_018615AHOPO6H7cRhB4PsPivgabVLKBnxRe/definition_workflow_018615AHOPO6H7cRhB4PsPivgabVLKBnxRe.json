@@ -1,0 +1,221 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018615AHOPO6H7cRhB4PsPivgabVLKBnxRe",
+    "name": "def",
+    "title": "def",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "b",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01863C9EMJE9J4LbaVd4A4uKw4NlSZxp5b9",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "def",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
+          "run_on_all_targets": true,
+          "selected_target_types": [
+            "terminal.unix_linux_endpoint"
+          ]
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018637WF81D583DucNGqSLsDgPsjOynF6ja",
+        "name": "newz",
+        "title": "newz",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "newz",
+          "input": {
+            "variable_workflow_0185WPLQZN8FH4JxDINdSEyT3LbeghIbsBB": 1
+          },
+          "runtime_user": {
+            "override_target_runtime_user": true,
+            "runtime_user_id": "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ",
+            "runtime_user_type": "runtime_user.terminal_key_credentials"
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "execute_on_this_target_group": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "target_id": "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm",
+            "target_type": "terminal.unix_linux_endpoint",
+            "use_workflow_target_group": false
+          },
+          "workflow_id": "definition_workflow_0185TUVNCVR4W2ZJf7clQtqCjzGNZGBTf9L"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018615IV9BHX55dPuT0npJYhTnTJ3jkcVyz",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "source": "$activity.definition_activity_018637WF81D583DucNGqSLsDgPsjOynF6ja.output.definition_id$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm": {
+      "unique_name": "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm",
+      "name": "win ssh",
+      "title": "win ssh",
+      "type": "terminal.unix_linux_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "bash_shell": "/",
+        "default_runtime_user_id": "definition_runtime_user_017QSON1TPUGJ17u8hl2yZlG1Su4H5VxV9d",
+        "display_name": "win ssh",
+        "host": "aus-sap-stress2.tidalsoft.local",
+        "port": 22
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ": {
+      "unique_name": "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ",
+      "name": "MB_GCP_key",
+      "title": "MB_GCP_key",
+      "type": "runtime_user.terminal_key_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "MB_GCP_key",
+        "key": "*****",
+        "user": "*****"
+      }
+    },
+    "definition_runtime_user_017QSON1TPUGJ17u8hl2yZlG1Su4H5VxV9d": {
+      "unique_name": "definition_runtime_user_017QSON1TPUGJ17u8hl2yZlG1Su4H5VxV9d",
+      "name": "tidalsoft\\ahiltov",
+      "title": "tidalsoft\\ahiltov",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "tidalsoft\\ahiltov",
+        "password": "*****",
+        "user": "*****"
+      }
+    }
+  },
+  "target_groups": {
+    "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9": {
+      "unique_name": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
+      "name": "tg",
+      "title": "tg",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "terminal.unix_linux_endpoint",
+          "view_target_type": "terminal.unix_linux_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0185TUVNCVR4W2ZJf7clQtqCjzGNZGBTf9L",
+        "name": "newz",
+        "title": "newz",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 1,
+              "scope": "input",
+              "name": "in1",
+              "type": "datatype.integer",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0185WPLQZN8FH4JxDINdSEyT3LbeghIbsBB",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "newz",
+          "favorite": false,
+          "runtime_user": {
+            "runtime_user_id": "definition_runtime_user_0162811BUTFJI3x6SZ7o4jv24TIUHYDvheZ",
+            "override_target_runtime_user": true,
+            "runtime_user_type": "runtime_user.terminal_key_credentials"
+          },
+          "target": {
+            "target_type": "terminal.unix_linux_endpoint",
+            "target_id": "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0185WN7F2IPJI2ZvHSr0WVDlf2G6FScxMjr",
+            "name": "To Lower",
+            "title": "To Lower",
+            "type": "core.string2lower",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "To Lower",
+              "source": "$workflow.definition_workflow_0185TUVNCVR4W2ZJf7clQtqCjzGNZGBTf9L.output.instance_id$"
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
