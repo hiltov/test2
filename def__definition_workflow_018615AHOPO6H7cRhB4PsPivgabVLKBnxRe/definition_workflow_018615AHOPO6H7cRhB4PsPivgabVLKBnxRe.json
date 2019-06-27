@@ -7,15 +7,36 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "tabletype_0187H8N4M354W3wdWWhsSgsWNwXONh5Pnhc",
         "properties": {
-          "value": false,
-          "scope": "input",
-          "name": "b",
-          "type": "datatype.boolean",
+          "value": [
+            {
+              "column_data": {
+                "int": 1
+              }
+            },
+            {
+              "column_data": {
+                "int": 2
+              }
+            },
+            {
+              "column_data": {
+                "int": 3
+              }
+            },
+            {
+              "column_data": {
+                "int": 4
+              }
+            }
+          ],
+          "scope": "static",
+          "name": "t1",
+          "type": "datatype.table",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01863C9EMJE9J4LbaVd4A4uKw4NlSZxp5b9",
+        "unique_name": "variable_workflow_0187H8WDQPEY32jfjtEpyaWeBzFHHNytDkK",
         "object_type": "variable_workflow"
       }
     ],
@@ -32,20 +53,82 @@
         "target_default": true
       },
       "target": {
-        "execute_on_target_group": true,
-        "target_group": {
-          "target_group_id": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
-          "run_on_all_targets": true,
-          "selected_target_types": [
-            "terminal.unix_linux_endpoint"
-          ]
-        }
+        "target_type": "terminal.unix_linux_endpoint",
+        "target_id": "definition_target_017NHVMV5QH2D4zp4q93cVtxKpzFEFRWoEQ",
+        "execute_on_workflow_target": true
       }
     },
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_018637WF81D583DucNGqSLsDgPsjOynF6ja",
+        "unique_name": "definition_activity_0187JYA15N7O15lHpm0PJWKLokFH4U5HO4A",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "date",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "failed_completed": [
+            " "
+          ],
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0187H85V2JMGH0tJXqrUbTOnIBRblz232ex",
+        "name": "Select from Table",
+        "title": "Select from Table",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Select from Table",
+          "input_table": "$workflow.definition_workflow_018615AHOPO6H7cRhB4PsPivgabVLKBnxRe.static.variable_workflow_0187H8WDQPEY32jfjtEpyaWeBzFHHNytDkK$",
+          "number_of_rows": {
+            "all_rows": true,
+            "at_most": false
+          },
+          "persist_output": false,
+          "sorting": {
+            "no_sort": true,
+            "sort_by": false
+          },
+          "where_clause": "int=x"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0186YK7C4QQSR2LvJqX2WAna4eBuyS6B4wf",
+        "name": "Parse Date",
+        "title": "Parse Date",
+        "type": "core.parse_date",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parse Date",
+          "format_string": "2006-01-02",
+          "input_string": "444",
+          "use_custom_format": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0186YLFU7WW9Y654NnLMJ8OfpSj9XMKfO7D",
         "name": "newz",
         "title": "newz",
         "type": "workflow.sub_workflow",
@@ -69,6 +152,7 @@
             "override_workflow_target_group_criteria": false,
             "target_id": "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm",
             "target_type": "terminal.unix_linux_endpoint",
+            "use_workflow_target": false,
             "use_workflow_target_group": false
           },
           "workflow_id": "definition_workflow_0185TUVNCVR4W2ZJf7clQtqCjzGNZGBTf9L"
@@ -84,7 +168,19 @@
         "properties": {
           "continue_on_failure": false,
           "display_name": "To Lower",
-          "source": "$activity.definition_activity_018637WF81D583DucNGqSLsDgPsjOynF6ja.output.definition_id$"
+          "source": "$workflow.definition_workflow_018615AHOPO6H7cRhB4PsPivgabVLKBnxRe.output.instance_id$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0186JR962VDUT7gkLaJBuLvYath0FeM9MtN",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "succeeded",
+          "display_name": "Completed"
         },
         "object_type": "definition_activity"
       }
@@ -93,7 +189,78 @@
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
   },
+  "triggers": {
+    "triggerevent_01863WKKS2OLT07moWFeOvtKOoVoGQM80rG": {
+      "workflow_id": "definition_workflow_018615AHOPO6H7cRhB4PsPivgabVLKBnxRe",
+      "name": "tr",
+      "title": "",
+      "lowercase_name": "event.tr",
+      "type": "event",
+      "base_type": "trigger",
+      "ref_id": "event_017OWFC9Q1U8L5G4z3g0nCbHR6Ed9PMIh2d",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerevent_01863WKKS2OLT07moWFeOvtKOoVoGQM80rG",
+      "object_type": "triggerevent"
+    }
+  },
+  "events": {
+    "event_017OWFC9Q1U8L5G4z3g0nCbHR6Ed9PMIh2d": {
+      "name": "imap del",
+      "title": "imap del",
+      "type": "email.event",
+      "base_type": "event",
+      "object_type": "event",
+      "target_id": "definition_target_017NF2ZN9DAM95lanwaBL7YWrkeYkfGAEfC",
+      "version": "1.0.0",
+      "properties": {
+        "action": "delete",
+        "conditions": {
+          "left_operand": "$output.message$",
+          "operator": "mw",
+          "right_operand": "qwert*"
+        },
+        "folder": "INBOX",
+        "target_id": "definition_target_017NF2ZN9DAM95lanwaBL7YWrkeYkfGAEfC",
+        "title": "imap del"
+      },
+      "unique_name": "event_017OWFC9Q1U8L5G4z3g0nCbHR6Ed9PMIh2d"
+    }
+  },
   "targets": {
+    "definition_target_017NF2ZN9DAM95lanwaBL7YWrkeYkfGAEfC": {
+      "unique_name": "definition_target_017NF2ZN9DAM95lanwaBL7YWrkeYkfGAEfC",
+      "name": "imap end",
+      "title": "imap end",
+      "type": "email.imap_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_017NF0J06WQYM6G0Zo9mlf8honJQioe37sN",
+        "display_name": "imap end",
+        "ignore_certificate_errors": true,
+        "polling_interval": 10,
+        "port": 993,
+        "protocol": "IMAP",
+        "server": "imap.mail.ru",
+        "tls_enabled": true
+      }
+    },
+    "definition_target_017NHVMV5QH2D4zp4q93cVtxKpzFEFRWoEQ": {
+      "unique_name": "definition_target_017NHVMV5QH2D4zp4q93cVtxKpzFEFRWoEQ",
+      "name": "linux end",
+      "title": "linux end",
+      "type": "terminal.unix_linux_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "bash_shell": "/bin/bash",
+        "default_runtime_user_id": "definition_runtime_user_017NHVIOF82BS3hAnXSx3277o9UEIFLy2DD",
+        "display_name": "linux end",
+        "host": "10.88.38.57",
+        "port": 22
+      }
+    },
     "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm": {
       "unique_name": "definition_target_01807TW39KSQU7Qch3k8hzcOcg3V5w8aABm",
       "name": "win ssh",
@@ -124,6 +291,32 @@
         "user": "*****"
       }
     },
+    "definition_runtime_user_017NF0J06WQYM6G0Zo9mlf8honJQioe37sN": {
+      "unique_name": "definition_runtime_user_017NF0J06WQYM6G0Zo9mlf8honJQioe37sN",
+      "name": "hiltov@mail.ru",
+      "title": "hiltov@mail.ru",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "hiltov@mail.ru",
+        "password": "*****",
+        "sender": "*****"
+      }
+    },
+    "definition_runtime_user_017NHVIOF82BS3hAnXSx3277o9UEIFLy2DD": {
+      "unique_name": "definition_runtime_user_017NHVIOF82BS3hAnXSx3277o9UEIFLy2DD",
+      "name": "root 2",
+      "title": "root 2",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "root 2",
+        "password": "*****",
+        "user": "*****"
+      }
+    },
     "definition_runtime_user_017QSON1TPUGJ17u8hl2yZlG1Su4H5VxV9d": {
       "unique_name": "definition_runtime_user_017QSON1TPUGJ17u8hl2yZlG1Su4H5VxV9d",
       "name": "tidalsoft\\ahiltov",
@@ -138,22 +331,21 @@
       }
     }
   },
-  "target_groups": {
-    "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9": {
-      "unique_name": "target_group_017KRNNA0ASWN6EyBNrushiLvDyOtXMFih9",
-      "name": "tg",
-      "title": "tg",
-      "type": "generic.target_group",
-      "base_type": "target_group",
-      "version": "1.0.0",
-      "targets": [
+  "table_types": {
+    "tabletype_0187H8N4M354W3wdWWhsSgsWNwXONh5Pnhc": {
+      "unique_name": "tabletype_0187H8N4M354W3wdWWhsSgsWNwXONh5Pnhc",
+      "data_type": "datatype.tabletype",
+      "display_name": "t",
+      "columns": [
         {
-          "data_target_type": "terminal.unix_linux_endpoint",
-          "view_target_type": "terminal.unix_linux_endpoint",
-          "include_all_targets": true
+          "is_required": true,
+          "name": "int",
+          "title": "int",
+          "type": "integer"
         }
       ],
-      "object_type": "target_group"
+      "base_type": "datatype",
+      "object_type": "tabletype"
     }
   },
   "subworkflows": [
@@ -198,6 +390,20 @@
         },
         "object_type": "definition_workflow",
         "actions": [
+          {
+            "unique_name": "definition_activity_0186PCP0J5AQG1JWy6uZdRMu2n7UFY4b1BA",
+            "name": "Match Regular Expression",
+            "title": "Match Regular Expression",
+            "type": "core.matchregex",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Match Regular Expression",
+              "input_regex": "@@#@$#|%@#|%@!#5)#()(#",
+              "input_string": "111"
+            },
+            "object_type": "definition_activity"
+          },
           {
             "unique_name": "definition_activity_0185WN7F2IPJI2ZvHSr0WVDlf2G6FScxMjr",
             "name": "To Lower",
