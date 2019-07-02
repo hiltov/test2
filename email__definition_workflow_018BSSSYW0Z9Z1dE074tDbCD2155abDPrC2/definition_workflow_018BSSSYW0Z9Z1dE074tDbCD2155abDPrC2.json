@@ -1,0 +1,93 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018BSSSYW0Z9Z1dE074tDbCD2155abDPrC2",
+    "name": "email",
+    "title": "email",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "email",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "email.smtp_endpoint",
+        "target_id": "definition_target_018BSU0Q3LFF139vOaunv2NHD9ZchxgGo9r",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018BSSWOC7CWP2rSdBvTu8dgvb4dVjXZxBg",
+        "name": "Send Email",
+        "title": "Send Email",
+        "type": "email.smtp_send_email",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "body": "test msg",
+          "continue_on_failure": false,
+          "display_name": "Send Email",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "subject": "test",
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          },
+          "to": "hiltov@mail.ru"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_018BSU0Q3LFF139vOaunv2NHD9ZchxgGo9r": {
+      "unique_name": "definition_target_018BSU0Q3LFF139vOaunv2NHD9ZchxgGo9r",
+      "name": "smtp end",
+      "title": "smtp end",
+      "type": "email.smtp_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_0188KVTHYDCR073CHx76hCjOPmQ9AB7K1qv",
+        "display_name": "smtp end",
+        "no_runtime_user": false,
+        "port": 465,
+        "protocol": "SMTP",
+        "server": "smtp.mail.ru"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0188KVTHYDCR073CHx76hCjOPmQ9AB7K1qv": {
+      "unique_name": "definition_runtime_user_0188KVTHYDCR073CHx76hCjOPmQ9AB7K1qv",
+      "name": "hiltov@mail.ru 2",
+      "title": "hiltov@mail.ru 2",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "hiltov@mail.ru 2",
+        "password": "*****",
+        "sender": "*****"
+      }
+    }
+  }
+}
