@@ -1,0 +1,176 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018MZFWRD5SU42JHMnnDRNWsWNhTgl1GCvF",
+    "name": "PARENT - MAIN",
+    "title": "PARENT - MAIN",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "PARENT - MAIN",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018MZG8EAMVBV6RyhPoTwW5zrZfhTOhhLgk",
+        "name": "MK-Atomic-LOWER",
+        "title": "MK-Atomic-LOWER",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "MK-Atomic-LOWER",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "no_target": true,
+            "override_workflow_target": false
+          },
+          "workflow_id": "definition_workflow_018MZERR9NLCF6ABmwFTDtQ3XBdQUk8UxwM"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018MZGDABWPWY292xOlgZYQsE6M0OJgNW2d",
+        "name": "AWS sample",
+        "title": "AWS sample",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "AWS sample",
+          "input": {
+            "variable_workflow_0165NZX0P3UZS04JHHNJ6jZ5GszDZtZiU8w": "us-east-1"
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "016338HYTGEWB5K0kjhcFOnuCAuVQPO27Jc",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0165NYH9XBGSN4wOQ8qC70LKu3NtOsffsqD"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018MZGIONGIHG2Z0drJW67FDNn6dFX5ZyiP",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "sleep_interval": 3
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "categories": {
+    "category_1Cuv0ORm51CCSpHTTdHhMSzqHvu": {
+      "unique_name": "category_1Cuv0ORm51CCSpHTTdHhMSzqHvu",
+      "name": "AO Demo",
+      "title": "AO Demo",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0165NYH9XBGSN4wOQ8qC70LKu3NtOsffsqD",
+        "name": "AWS sample",
+        "title": "AWS sample",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "us-east-1",
+              "scope": "input",
+              "name": "Region",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0165NZX0P3UZS04JHHNJ6jZ5GszDZtZiU8w",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "AWS sample",
+          "favorite": false,
+          "target": {
+            "target_type": "aws.endpoint",
+            "specify_on_workflow_start": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0165NYOY8GE1W4CjIJAJN9S3pxd3moAYN4m",
+            "name": "Generic AWS API Request",
+            "title": "Describe Image",
+            "type": "aws.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "GET",
+              "api_url": "https://ec2.$workflow.definition_workflow_0165NYH9XBGSN4wOQ8qC70LKu3NtOsffsqD.input.variable_workflow_0165NZX0P3UZS04JHHNJ6jZ5GszDZtZiU8w$.amazonaws.com/?Action=DescribeImages\u0026ImageId.1=ami-be3adfd7\u0026Version=2016-11-15",
+              "continue_on_failure": false,
+              "display_name": "Describe Image",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "target": {
+                "override_workflow_target": false,
+                "override_workflow_target_group_criteria": false,
+                "use_workflow_target": true,
+                "use_workflow_target_group": false
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ],
+  "atomic_workflows": [
+    "definition_workflow_018MZERR9NLCF6ABmwFTDtQ3XBdQUk8UxwM"
+  ]
+}
