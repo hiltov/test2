@@ -74,6 +74,31 @@
         "object_type": "definition_activity"
       },
       {
+        "unique_name": "definition_activity_018N10ERIQVQL68WddlGlaDzdy5FkUXiZ7O",
+        "name": "AWS sample",
+        "title": "AWS sample",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "AWS sample",
+          "input": {
+            "variable_workflow_0165NZX0P3UZS04JHHNJ6jZ5GszDZtZiU8w": "us-east-1"
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "016338HYTGEWB5K0kjhcFOnuCAuVQPO27Jc",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_0165NYH9XBGSN4wOQ8qC70LKu3NtOsffsqD"
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_018MZGIONGIHG2Z0drJW67FDNn6dFX5ZyiP",
         "name": "Sleep",
         "title": "Sleep",
