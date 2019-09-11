@@ -1,0 +1,159 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_019ZJA31940N21oXmCujBblQ9hshvtYgB3i",
+    "name": "parentwf",
+    "title": "parentwf",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "parentwf",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_019ZKMWKMVTLV4p4w150RnQ6MzGjyfR9q3L",
+        "name": "Generic CCS API Request",
+        "title": "Generic CCS API Request",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": false,
+          "display_name": "Generic CCS API Request",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019ZJA8XYNHGM3x4zIR5GNwk9hpEN3jIgxb",
+        "name": "subwf",
+        "title": "subwf",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "subwf",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_019ZJ9LCK95Q13uGpffdEPcOUrWifvlVSJy"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_019ZJBTY3SL144QwZIPvmrTXieGOEerU4JQ": {
+      "unique_name": "definition_target_019ZJBTY3SL144QwZIPvmrTXieGOEerU4JQ",
+      "name": "term",
+      "title": "term",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_019ZJBQLB8SCF2rY54OnRtPJ4JZJhBGeIdo",
+        "display_name": "term",
+        "host": "10.88.38.57",
+        "port": 22,
+        "protocol": "ssh"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_019ZJBQLB8SCF2rY54OnRtPJ4JZJhBGeIdo": {
+      "unique_name": "definition_runtime_user_019ZJBQLB8SCF2rY54OnRtPJ4JZJhBGeIdo",
+      "name": "root",
+      "title": "root",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "root",
+        "password": "*****",
+        "user": "*****"
+      }
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_019ZJ9LCK95Q13uGpffdEPcOUrWifvlVSJy",
+        "name": "subwf",
+        "title": "subwf",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "subwf",
+          "target": {
+            "no_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_019ZJB8AB7EIF5KdQuB2N227BIXJ0RipTUc",
+            "name": "Execute Terminal Command(s)",
+            "title": "Execute Terminal Command(s)",
+            "type": "terminal.command",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "command_timeout": 60,
+              "commands": "date",
+              "continue_on_failure": false,
+              "display_name": "Execute Terminal Command(s)",
+              "merge_commands": false,
+              "runtime_user": {
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_019ZJBTY3SL144QwZIPvmrTXieGOEerU4JQ"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
